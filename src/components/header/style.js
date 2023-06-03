@@ -21,6 +21,9 @@ export const Container = styled.header`
       position: static;
       transform: translate(0, 0);
     }
+    &:hover{
+      cursor: pointer;
+    }
   }
   button {
     background-color: transparent;
@@ -37,6 +40,9 @@ export const Container = styled.header`
         display: inline;
       }
       font-size: 1.7rem;
+    }
+    &:hover{
+      cursor: pointer;
     }
   }
 `;

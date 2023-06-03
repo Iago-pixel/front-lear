@@ -11,7 +11,9 @@ export const theme = {
 export const GlobalStyle = createGlobalStyle`
     body {
         padding: 0;
-        margin: 0;
+        margin: 0 auto;
+        max-width: 1440px;
+
         background-color: ${theme.background};
         @media (min-width: 1000px) {
             background-color: ${theme.white};
