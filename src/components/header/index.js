@@ -1,30 +1,46 @@
-import { Container } from "./style";
+import { useState } from "react";
+
+import { Container, customStyles, NavContainer } from "./style";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRightFromBracket } from "@fortawesome/free-solid-svg-icons";
-import { theme } from "../../styles/global";
-import { useNavigate } from "react-router-dom";
+import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 
-export const Header = () => {
-  const navigate = useNavigate();
+import { Link } from "react-router-dom";
+import Modal from "react-modal";
 
-  const togo = (path) => {
-    navigate(path);
+export const Header = ({ children, hasPerfil, ...rest }) => {
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  const openModal = () => {
+    setIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsOpen(false);
   };
 
   return (
-    <Container>
-      <h1 onClick={() => togo("/")} className="header__title title">
-        Curson Frontend
-      </h1>
-      <button className="phrase" onClick={() => togo("/login")}>
-        <FontAwesomeIcon
-          icon={faRightFromBracket}
-          size="2xl"
-          style={{ color: theme.white }}
-          className="exit-icon"
-        />
-        <span className="exit-word">Sair</span>
+    <Container hasPerfil={hasPerfil} {...rest}>
+      <div>{children}</div>
+      <button onClick={openModal}>
+        <FontAwesomeIcon icon={faCircleUser} />
       </button>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+      >
+        <NavContainer>
+          <ul>
+            <li>
+              <Link>Area do aluno</Link>
+            </li>
+            <li>
+              <Link>Sair</Link>
+            </li>
+          </ul>
+        </NavContainer>
+      </Modal>
     </Container>
   );
 };

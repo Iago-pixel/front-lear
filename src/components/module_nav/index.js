@@ -1,54 +1,45 @@
-import { Container, Lesson } from "./style";
+import { Container } from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAnglesUp, faAnglesDown } from "@fortawesome/free-solid-svg-icons";
-import { theme } from "../../styles/global";
+import { faCaretRight, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 import { useCollapse } from "react-collapsed";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 
-export const ModuleNav = ({ title, classes, ...rest }) => {
-  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse({
-    defaultExpanded: true,
-  });
-  const [lessonSelect, setLessonSelect] = useState(0);
+import { Link } from "react-router-dom";
 
-  const navigate = useNavigate();
-
-  const toLesson = (route, index) => {
-    setLessonSelect(index);
-    navigate(route);
-  };
+export const ModuleNav = ({ title, classes, disabled, ...rest }) => {
+  const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
 
   return (
-    <Container {...rest}>
-      <h2 className="title">{title}</h2>
+    <Container disabled={disabled} {...rest}>
+      <div className="module-nav__top">
+        <h2>
+          {title} ({classes.length} aulas)
+        </h2>
+        {!disabled ? (
+          <button className="extend-button" {...getToggleProps()}>
+            {!isExpanded ? (
+              <FontAwesomeIcon icon={faCaretRight} />
+            ) : (
+              <FontAwesomeIcon icon={faCaretDown} />
+            )}
+          </button>
+        ) : (
+          <div className="extend-button">
+            <FontAwesomeIcon icon={faCaretRight} />
+          </div>
+        )}
+      </div>
       <nav {...getCollapseProps()}>
         <ul>
           {classes
             .sort((lessonA, lessonB) => lessonA.index - lessonB.index)
             .map((lesson, index) => (
-              <Lesson key={index} select={index === lessonSelect}>
-                <button
-                  className="lesson__button"
-                  onClick={() => toLesson(lesson.route, index)}
-                >
-                  <div className="diamond">
-                    <span className="title">{lesson.index}</span>
-                  </div>
-                  <div className="lesson__name title">{lesson.name}</div>
-                </button>
-              </Lesson>
+              <li key={index}>
+                <Link to={lesson.route}>{lesson.name}</Link>
+              </li>
             ))}
         </ul>
       </nav>
-      <button className="extend-button" {...getToggleProps()}>
-        {isExpanded ? (
-          <FontAwesomeIcon icon={faAnglesUp} style={{ color: theme.white }} />
-        ) : (
-          <FontAwesomeIcon icon={faAnglesDown} style={{ color: theme.white }} />
-        )}
-      </button>
     </Container>
   );
 };

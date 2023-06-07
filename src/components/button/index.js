@@ -1,8 +1,8 @@
 import { Container } from "./style";
 
-export const Button = ({ children, ...rest }) => {
+export const Button = ({ children, type = 0, size = 0, ...rest }) => {
   return (
-    <Container className="phrase" {...rest}>
+    <Container type={type} size={size} {...rest}>
       {children}
     </Container>
   );

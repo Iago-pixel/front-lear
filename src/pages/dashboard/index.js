@@ -1,19 +1,19 @@
 import { ModuleNav } from "../../components/module_nav";
-import { LogicaIntroducao } from "../../components/logica_introducao";
 import { Header } from "../../components/header";
-
 import { Container } from "./style";
 
 import { logicClasses } from "../../service/modules";
 
-export const Home = () => {
+import { CourseNav } from "../../components/course_nav";
+
+export const Dashboard = () => {
   return (
     <>
-      <Header />
+      <Header hasPerfil />
       <Container>
         <main>
+          <CourseNav select={3} classes={logicClasses.classes} />
           <div className="text-and-menu">
-            <LogicaIntroducao />
             <div className="module-nav">
               <ModuleNav {...logicClasses} />
             </div>

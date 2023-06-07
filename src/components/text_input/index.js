@@ -1,5 +1,17 @@
-import { Container } from "./style";
+import { Container, InputStyled } from "./style";
 
-export const TextInput = ({ ...rest }) => {
-  return <Container {...rest} />;
+export const TextInput = ({
+  name,
+  register,
+  errors,
+  placeholder,
+  type = "text",
+  ...rest
+}) => {
+  return (
+    <Container {...rest}>
+      <InputStyled placeholder={placeholder} type={type} {...register(name)} />
+      <span className="error">{errors[name]?.message}</span>
+    </Container>
+  );
 };

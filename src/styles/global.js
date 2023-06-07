@@ -1,11 +1,50 @@
 import { createGlobalStyle } from "styled-components";
 
 export const theme = {
-  background: "#121010",
-  gray: "#333333",
-  cyan: "#74E4E5",
-  white: "#FFFFFF",
-  borderRadius: "15px",
+  main: {
+    background: "#000000",
+    colorFont: "#FFFFFF",
+    borderRadius: "15px",
+  },
+  link: {
+    colorFont: "#74E4E5",
+  },
+  input: {
+    background: "#FFFFFF",
+    colorFont: "#000000",
+    fontWeight: "bold",
+    width: "20rem",
+    height: "3rem",
+    colorError: "red",
+  },
+  button: [
+    {
+      background: "#74E4E5",
+      colorFont: "#000000",
+      sizeWidth: ["auto", "21rem"],
+      sizeHeight: ["auto", "3rem"],
+    },
+    {
+      background: "rgba(116,228,228,0.13)",
+      colorFont: "#FFFFFF",
+      sizeWidth: ["auto", "21rem"],
+      sizeHeight: ["auto", "3rem"],
+    },
+    {
+      background: "#FFFFFF",
+      colorFont: "#000000",
+      sizeWidth: ["auto", "21rem"],
+      sizeHeight: ["auto", "3rem"],
+    },
+  ],
+  buttonDisabled: {
+    background: "#74E4E5",
+    colorFont: "#FFFFFF",
+  },
+  textCard: {
+    colorFont: "#FFFFFF",
+    background: "rgba(133,133,133,0.3)",
+  },
 };
 
 export const GlobalStyle = createGlobalStyle`
@@ -13,32 +52,15 @@ export const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0 auto;
         max-width: 1440px;
-
-        background-color: ${theme.background};
-        @media (min-width: 1000px) {
-            background-color: ${theme.white};
-        }
-    }
-    main {
-        padding: 1rem 1.5rem;
-    }
-    .title {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 600;
-    }
-    .phrase {
-        font-family: 'Raleway', sans-serif;
-    }
-    p {
-        text-indent: 20px;
+        background-color: ${theme.main.background};
     }
     figure {
         margin: 0;
     }
     figcaption {
-        font-size: 0.6rem;
-        @media (min-width: 768px) {
-            font-size: 0.8rem;
-        }
+        display: none;
+    }
+    a {
+      text-decoration: none;
     }
 `;
