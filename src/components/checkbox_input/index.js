@@ -1,10 +1,11 @@
 import { Container } from "./style";
 
-export const CheckboxInput = ({ name, text, ...rest }) => {
+export const CheckboxInput = ({ name, text, register, errors, ...rest }) => {
   return (
-    <Container>
-      <input type="checkbox" id={name} name={name} {...rest} />
+    <Container errorsName={errors[name]} {...rest}>
+      <input type="checkbox" id={name} name={name} {...register(name)} />
       <label for={name}>{text}</label>
+      <span className="error">{errors[name]?.message}</span>
     </Container>
   );
 };

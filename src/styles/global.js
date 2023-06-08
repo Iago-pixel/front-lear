@@ -14,6 +14,7 @@ export const theme = {
     colorFont: "#000000",
     fontWeight: "bold",
     width: "20rem",
+    selectWidth: "21rem",
     height: "3rem",
     colorError: "red",
   },

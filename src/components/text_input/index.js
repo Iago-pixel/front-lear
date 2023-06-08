@@ -9,8 +9,13 @@ export const TextInput = ({
   ...rest
 }) => {
   return (
-    <Container {...rest}>
-      <InputStyled placeholder={placeholder} type={type} {...register(name)} />
+    <Container errorsName={errors[name]} {...rest}>
+      <InputStyled
+        name={name}
+        placeholder={placeholder}
+        type={type}
+        {...register(name)}
+      />
       <span className="error">{errors[name]?.message}</span>
     </Container>
   );

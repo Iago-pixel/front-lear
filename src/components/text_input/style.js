@@ -1,6 +1,18 @@
 import styled from "styled-components";
 import { theme } from "../../styles/global";
 
+export const Container = styled.div`
+  display: flex;
+  margin-bottom: ${({ errorsName }) => (errorsName ? "1.5rem" : "0.5rem")};
+  position: relative;
+  .error {
+    position: absolute;
+    bottom: -1rem;
+    color: ${theme.input.colorError};
+    font-size: 0.8rem;
+  }
+`;
+
 export const InputStyled = styled.input`
   background-color: ${theme.input.background};
   border: none;
@@ -29,17 +41,5 @@ export const InputStyled = styled.input`
     color: ${theme.input.colorFont};
     font-size: 1rem;
     font-weight: bold;
-  }
-`;
-
-export const Container = styled.div`
-  display: flex;
-  margin-bottom: 1.5rem;
-  position: relative;
-  .error {
-    position: absolute;
-    bottom: -1rem;
-    color: ${theme.input.colorError};
-    font-size: 0.8rem;
   }
 `;

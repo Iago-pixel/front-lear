@@ -79,10 +79,11 @@ export const PagLogin = () => {
         )
         .then((res) => {
           console.log(res.data);
+          navigate("/dashboard");
         })
         .catch((err) => console.log(err));
     }
-  }, [user]);
+  }, [user, navigate]);
 
   return (
     <>

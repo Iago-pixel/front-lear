@@ -4,6 +4,8 @@ import { theme } from "../../styles/global";
 
 export const Container = styled.div`
   display: flex;
+  margin-bottom: ${({ errorsName }) => (errorsName ? "1.5rem" : "0.5rem")};
+  position: relative;
   select {
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -11,22 +13,21 @@ export const Container = styled.div`
     background-color: ${theme.input.background};
     border: none;
     border-radius: ${theme.main.borderRadius};
-    width: ${theme.input.width};
+    width: ${theme.input.selectWidth};
     height: ${theme.input.height};
     color: ${theme.input.colorFont};
     font-weight: bold;
+    font-size: 1rem;
     padding: 0 0 0 1rem;
+    margin-bottom: 0.5rem;
     &:hover {
       cursor: pointer;
-    }
-    option {
-      color: ${theme.input.colorFont};
-      font-weight: bold;
     }
   }
   .arrow {
     position: relative;
     right: 28px;
+    width: 0;
     height: 3rem;
     display: flex;
     align-items: center;
@@ -35,5 +36,11 @@ export const Container = styled.div`
     &:hover {
       cursor: pointer;
     }
+  }
+  .error {
+    position: absolute;
+    bottom: -1rem;
+    color: ${theme.input.colorError};
+    font-size: 0.8rem;
   }
 `;

@@ -3,10 +3,17 @@ import { Container } from "./style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-export const SelectInput = ({ name, title, options, ...rest }) => {
+export const SelectInput = ({
+  name,
+  title,
+  options,
+  register,
+  errors,
+  ...rest
+}) => {
   return (
-    <Container>
-      <select name={name} {...rest}>
+    <Container errorsName={errors[name]} {...rest}>
+      <select name={name} {...register(name)}>
         <option value="" disabled selected>
           {title}
         </option>
@@ -19,6 +26,7 @@ export const SelectInput = ({ name, title, options, ...rest }) => {
       <div className="arrow">
         <FontAwesomeIcon icon={faCaretDown} />
       </div>
+      <span className="error">{errors[name]?.message}</span>
     </Container>
   );
 };
