@@ -1,6 +1,6 @@
 import { Container } from "./style";
 
-import { itemVatiants } from "../../styles/global";
+import { itemVariants } from "../../styles/global";
 import { motion } from "framer-motion";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -15,7 +15,7 @@ export const SelectInput = ({
   ...rest
 }) => {
   return (
-    <motion.div variants={itemVatiants} {...rest}>
+    <motion.div variants={itemVariants} {...rest}>
       <Container errorsName={errors[name]}>
         <select name={name} {...register(name)}>
           <option value="" disabled selected>

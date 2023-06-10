@@ -56,7 +56,7 @@ export const theme = {
   },
 };
 
-export const containerVatiants = {
+export const containerVariants = {
   hidden: { opacity: 1 },
   visible: {
     opacity: 1,
@@ -67,7 +67,7 @@ export const containerVatiants = {
   },
 };
 
-export const itemVatiants = {
+export const itemVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,

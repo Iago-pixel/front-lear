@@ -8,7 +8,7 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  button {
+  .head__button {
     background-color: transparent;
     border: none;
     display: ${({ hasPerfil }) => (hasPerfil ? "flex" : "none")};

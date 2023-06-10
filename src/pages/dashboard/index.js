@@ -5,7 +5,7 @@ import { Container } from "./style";
 import logo from "../../imgs/logo.svg";
 
 import { motion } from "framer-motion";
-import { containerVatiants } from "../../styles/global";
+import { containerVariants } from "../../styles/global";
 
 import { Link } from "react-router-dom";
 
@@ -28,7 +28,7 @@ export const Dashboard = ({ ...rest }) => {
       <Container>
         <h1>Trilha de ensino | {courses[0]["name"]}</h1>
         <motion.ul
-          variants={containerVatiants}
+          variants={containerVariants}
           initial="hidden"
           animate="visible"
         >

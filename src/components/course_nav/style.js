@@ -4,11 +4,11 @@ import { theme } from "../../styles/global";
 
 export const Container = styled.section`
   background-color: transparent;
-  width: 20rem;
+  width: 25rem;
   h1 {
-    text-align: center;
-    color: ${theme.colorFont1};
-    font-size: 2rem;
+    padding-left: 1rem;
+    color: ${theme.main.colorFont1};
+    font-size: ${theme.title.fontSize};
   }
   ul {
     padding: 0;
@@ -26,7 +26,7 @@ export const ItemContainer = styled.li`
     border: none;
     border-radius: ${theme.main.borderRadius};
     background-color: ${({ selected }) =>
-      selected ? theme.button[1].background : "transparent"};
+      selected ? theme.button[0].background : "transparent"};
     &:hover {
         cursor: pointer;
         background-color: ${theme.button[0].background};
@@ -37,7 +37,7 @@ export const ItemContainer = styled.li`
     }
   }
   .number {
-    background-color: ${theme.background2};
+    background-color: ${theme.button[0].background};
     border-radius: 7px;
     height: 2.5rem;
     width: 2.5rem;
@@ -52,6 +52,6 @@ export const ItemContainer = styled.li`
     font-size: 1.2rem;
     font-weight: ${({ selected }) => (selected ? "bold" : "normal")};
     color: ${({ selected }) =>
-      selected ? theme.colorFont2 : theme.colorFont1}};
+      selected ? theme.button[0].colorFont : theme.main.colorFont}};
   }
 `;

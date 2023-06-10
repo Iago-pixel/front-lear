@@ -39,8 +39,6 @@ export const Container = styled.section`
     }
   }
   ul {
-    display: grid;
-    grid-template-columns: 1fr;
     list-style: none;
     margin: 0;
     padding: 20px 20px 0;

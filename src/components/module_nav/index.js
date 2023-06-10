@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 import { motion } from "framer-motion";
-import { itemVatiants } from "../../styles/global";
+import { itemVariants } from "../../styles/global";
 
 import { useCollapse } from "react-collapsed";
 
@@ -15,7 +15,7 @@ export const ModuleNav = ({ title, classes, disabled, ...rest }) => {
   const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
 
   return (
-    <motion.div variants={itemVatiants}>
+    <motion.div variants={itemVariants}>
       <Container disabled={disabled} {...rest}>
         <div className="module-nav__top">
           <h2>

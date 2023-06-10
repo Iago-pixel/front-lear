@@ -1,6 +1,6 @@
 import { Container, InputStyled } from "./style";
 import { motion } from "framer-motion";
-import { itemVatiants } from "../../styles/global";
+import { itemVariants } from "../../styles/global";
 
 export const TextInput = ({
   name,
@@ -11,7 +11,7 @@ export const TextInput = ({
   ...rest
 }) => {
   return (
-    <motion.div variants={itemVatiants} {...rest}>
+    <motion.div variants={itemVariants} {...rest}>
       <Container errorsName={errors[name]}>
         <InputStyled
           name={name}

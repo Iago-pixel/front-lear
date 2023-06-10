@@ -26,8 +26,8 @@ export const Header = ({ children, hasPerfil, ...rest }) => {
 
   return (
     <Container hasPerfil={hasPerfil} {...rest}>
-      <div>children</div>
-      <button onClick={openModal}>
+      <div>{children}</div>
+      <button className="head__button" onClick={openModal}>
         <FontAwesomeIcon icon={faCircleUser} />
       </button>
       <Modal
@@ -41,7 +41,9 @@ export const Header = ({ children, hasPerfil, ...rest }) => {
               <Link to="/perfil">Area do aluno</Link>
             </li>
             <li>
-              <button onClick={() => logout()}>Sair</button>
+              <button className="head__button" onClick={() => logout()}>
+                Sair
+              </button>
             </li>
           </ul>
         </NavContainer>

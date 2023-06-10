@@ -7,7 +7,7 @@ import { CheckboxInput } from "../../components/checkbox_input";
 import { Link, useNavigate } from "react-router-dom";
 
 import { Container } from "./style";
-import { containerVatiants, itemVatiants } from "../../styles/global";
+import { containerVariants, itemVariants } from "../../styles/global";
 
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
@@ -75,7 +75,7 @@ export const PagRegister = ({ ...rest }) => {
         <main>
           <section>
             <motion.div
-              variants={containerVatiants}
+              variants={containerVariants}
               initial="hidden"
               animate="visible"
               {...rest}
@@ -129,7 +129,7 @@ export const PagRegister = ({ ...rest }) => {
                 />
                 <Button size={1}>Finalizar</Button>
               </form>
-              <motion.div className="toLogin" variants={itemVatiants}>
+              <motion.div className="toLogin" variants={itemVariants}>
                 <p className="toLogin__question">Já possui conta?</p>
                 <Link to="/" className="toLogin__link">
                   Fazer login

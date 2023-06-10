@@ -3,7 +3,7 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { useLinkedIn } from "react-linkedin-login-oauth2";
 
 import { Container, MainText, Login } from "./style";
-import { containerVatiants, itemVatiants } from "../../styles/global";
+import { containerVariants, itemVariants } from "../../styles/global";
 import { motion } from "framer-motion";
 
 import { TextInput } from "../../components/text_input";
@@ -110,11 +110,11 @@ export const PagLogin = ({ ...rest }) => {
           </MainText>
           <Login>
             <motion.div
-              variants={containerVatiants}
+              variants={containerVariants}
               initial="hidden"
               animate="visible"
             >
-              <motion.h1 variants={itemVatiants}>Sua conta</motion.h1>
+              <motion.h1 variants={itemVariants}>Sua conta</motion.h1>
               <form onSubmit={handleSubmit(onSubmitFunction)}>
                 <TextInput
                   placeholder="Email"
@@ -132,7 +132,7 @@ export const PagLogin = ({ ...rest }) => {
                   type="password"
                 />
                 <Link to="/esqueceusenha">
-                  <motion.span variants={itemVatiants}>
+                  <motion.span variants={itemVariants}>
                     Esqueceu sua senha?
                   </motion.span>
                 </Link>
@@ -146,7 +146,7 @@ export const PagLogin = ({ ...rest }) => {
                   Entrar com linkedin
                 </Button>
               </div>
-              <motion.div className="toRegister" variants={itemVatiants}>
+              <motion.div className="toRegister" variants={itemVariants}>
                 <p className="toRegister__question">Não possui conta?</p>
                 <Link to="/cadastro" className="toRegister__link">
                   Criar conta

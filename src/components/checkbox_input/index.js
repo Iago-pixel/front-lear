@@ -1,11 +1,11 @@
 import { Container } from "./style";
 
-import { itemVatiants } from "../../styles/global";
+import { itemVariants } from "../../styles/global";
 import { motion } from "framer-motion";
 
 export const CheckboxInput = ({ name, text, register, errors, ...rest }) => {
   return (
-    <motion.div variants={itemVatiants} {...rest}>
+    <motion.div variants={itemVariants} {...rest}>
       <Container errorsName={errors[name]}>
         <input type="checkbox" id={name} name={name} {...register(name)} />
         <label for={name}>{text}</label>
