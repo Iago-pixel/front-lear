@@ -1,6 +1,16 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { theme } from "../../styles/global";
 import rectangle from "../../imgs/rectangle.svg";
+
+const moveLeft = keyframes`
+  from {
+    transform: translateX(2rem)
+  }
+
+  to {
+    transform: translateX(0)
+  }
+`;
 
 export const Container = styled.div`
   background-image: url(${rectangle});
@@ -62,7 +72,7 @@ export const Container = styled.div`
     align-items: center;
     width: 50%;
     height: 50vh;
-
+    animation: ${moveLeft} 1s linear;
     h1 {
       font-size: 3.5rem;
       color: ${theme.main.colorFont};

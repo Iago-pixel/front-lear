@@ -7,7 +7,6 @@ export const Container = styled.div`
   display: inline-block;
   color: ${theme.main.colorFont};
   margin-bottom: ${({ errorsName }) => (errorsName ? "1.5rem" : "0.5rem")};
-  position: relative;
   input {
     margin-right: 0.7rem;
     -ms-transform: scale(${scale}); /* IE */
@@ -19,10 +18,9 @@ export const Container = styled.div`
   label {
     display: inline-block;
     font-size: 1rem;
+    padding-left: 1rem;
   }
   .error {
-    position: absolute;
-    bottom: -1rem;
     color: ${theme.input.colorError};
     font-size: 0.8rem;
   }

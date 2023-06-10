@@ -1,25 +1,17 @@
 import styled from "styled-components";
+import { theme } from "../../styles/global";
 
-export const Container = styled.div`
-  .text-and-menu {
-    min-height: 100vh;
-    width: 100%;
-    @media (min-width: 1000px) {
-      display: flex;
-    }
+export const Container = styled.main`
+  padding: 0 4rem;
+  h1 {
+    font-size: ${theme.title.fontSize};
+    color: ${theme.main.colorFont};
   }
-  .lesson {
-    display: none;
-    width: 60%;
-    margin: 0 48px 0 0;
-    padding: 16px 0 0 32px;
-    @media (min-width: 1000px) {
-      display: block;
-    }
+  ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
   }
-  .module-nav {
-    @media (min-width: 1000px) {
-      width: 40%;
-    }
+  li {
+    padding: 2.3rem 0;
   }
 `;

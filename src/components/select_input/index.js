@@ -1,5 +1,8 @@
 import { Container } from "./style";
 
+import { itemVatiants } from "../../styles/global";
+import { motion } from "framer-motion";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
@@ -12,21 +15,23 @@ export const SelectInput = ({
   ...rest
 }) => {
   return (
-    <Container errorsName={errors[name]} {...rest}>
-      <select name={name} {...register(name)}>
-        <option value="" disabled selected>
-          {title}
-        </option>
-        {options.map((option, index) => (
-          <option key={index} value={option.value}>
-            {option.name}
+    <motion.div variants={itemVatiants} {...rest}>
+      <Container errorsName={errors[name]}>
+        <select name={name} {...register(name)}>
+          <option value="" disabled selected>
+            {title}
           </option>
-        ))}
-      </select>
-      <div className="arrow">
-        <FontAwesomeIcon icon={faCaretDown} />
-      </div>
-      <span className="error">{errors[name]?.message}</span>
-    </Container>
+          {options.map((option, index) => (
+            <option key={index} value={option.value}>
+              {option.name}
+            </option>
+          ))}
+        </select>
+        <div className="arrow">
+          <FontAwesomeIcon icon={faCaretDown} />
+        </div>
+        <span className="error">{errors[name]?.message}</span>
+      </Container>
+    </motion.div>
   );
 };

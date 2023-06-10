@@ -6,6 +6,9 @@ export const theme = {
     colorFont: "#FFFFFF",
     borderRadius: "15px",
   },
+  title: {
+    fontSize: "1.5rem",
+  },
   link: {
     colorFont: "#74E4E5",
   },
@@ -34,8 +37,9 @@ export const theme = {
     {
       background: "#FFFFFF",
       colorFont: "#000000",
-      sizeWidth: ["auto", "21rem"],
+      sizeWidth: ["auto", "21rem", "25rem"],
       sizeHeight: ["auto", "3rem"],
+      arrowSize: "2rem",
     },
   ],
   buttonDisabled: {
@@ -45,6 +49,28 @@ export const theme = {
   textCard: {
     colorFont: "#FFFFFF",
     background: "rgba(133,133,133,0.3)",
+  },
+  menu: {
+    colorFont: "#FFFFFF",
+    background: "rgba(116,228,228,0.13)",
+  },
+};
+
+export const containerVatiants = {
+  hidden: { opacity: 1 },
+  visible: {
+    opacity: 1,
+    transition: {
+      delayChildren: 0,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+export const itemVatiants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
   },
 };
 

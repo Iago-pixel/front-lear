@@ -1,5 +1,15 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { theme } from "../../styles/global";
+
+const moveRight = keyframes`
+  from {
+    transform: translateX(-2rem)
+  }
+
+  to {
+    transform: translateX(0)
+  }
+`;
 
 export const Container = styled.div`
   main {
@@ -11,6 +21,7 @@ export const Container = styled.div`
 `;
 
 export const MainText = styled.section`
+  animation: ${moveRight} 1s linear;
   .login-main-text {
     width: 30rem;
     h1 {

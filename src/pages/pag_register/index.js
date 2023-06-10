@@ -4,15 +4,16 @@ import { TextInput } from "../../components/text_input";
 import { Button } from "../../components/button";
 import { SelectInput } from "../../components/select_input";
 import { CheckboxInput } from "../../components/checkbox_input";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import { Container } from "./style";
-
-import { useNavigate } from "react-router-dom";
+import { containerVatiants, itemVatiants } from "../../styles/global";
 
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+
+import { motion } from "framer-motion";
 
 export const PagRegister = ({ ...rest }) => {
   const options = [{ name: "Curso frontend", value: "curso_frontend" }];
@@ -41,7 +42,7 @@ export const PagRegister = ({ ...rest }) => {
       .string()
       .required("Confimação obrigatória")
       .oneOf([yup.ref("password")], "Deve ser igual ao campo Senha"),
-    terms: yup.boolean().oneOf([true], "Você deve aceitar os termos"),
+    terms: yup.boolean().oneOf([true], " ***"),
   });
 
   const {
@@ -58,72 +59,89 @@ export const PagRegister = ({ ...rest }) => {
   };
 
   return (
-    <Container {...rest}>
-      <Header>
-        <img src={logo} alt="" />
-      </Header>
-      <main>
-        <section>
-          <form onSubmit={handleSubmit(onSubmitFunction)}>
-            <TextInput
-              name="name"
-              placeholder="Nome completo"
-              register={register}
-              errors={errors}
-            />
-            <TextInput
-              name="email"
-              placeholder="Email"
-              register={register}
-              errors={errors}
-            />
-            <TextInput
-              name="phone"
-              placeholder="Telefone"
-              register={register}
-              errors={errors}
-            />
-            <SelectInput
-              name="program"
-              title="Programa que irá participar"
-              options={options}
-              register={register}
-              errors={errors}
-            />
-            <TextInput
-              type="password"
-              name="password"
-              placeholder="Senha"
-              register={register}
-              errors={errors}
-            />
-            <TextInput
-              type="password"
-              name="repeatPassword"
-              placeholder="Confirme a senha"
-              register={register}
-              errors={errors}
-            />
-            <CheckboxInput
-              name="terms"
-              text="Concorda com nossos termos"
-              className="form__checkbox-box"
-              register={register}
-              errors={errors}
-            />
-            <Button size={1}>Finalizar</Button>
-          </form>
-          <div className="toLogin">
-            <p className="toLogin__question">Já possui conta?</p>
-            <Link to="/" className="toLogin__link">
-              Fazer login
-            </Link>
-          </div>
-        </section>
-        <section className="main-title">
-          <h1>Criar conta</h1>
-        </section>
-      </main>
-    </Container>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      {...rest}
+    >
+      <Container>
+        <Header>
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
+        </Header>
+        <main>
+          <section>
+            <motion.div
+              variants={containerVatiants}
+              initial="hidden"
+              animate="visible"
+              {...rest}
+            >
+              <form onSubmit={handleSubmit(onSubmitFunction)}>
+                <TextInput
+                  name="name"
+                  placeholder="Nome completo"
+                  register={register}
+                  errors={errors}
+                />
+                <TextInput
+                  name="email"
+                  placeholder="Email"
+                  register={register}
+                  errors={errors}
+                />
+                <TextInput
+                  name="phone"
+                  placeholder="Telefone"
+                  register={register}
+                  errors={errors}
+                />
+                <SelectInput
+                  name="program"
+                  title="Programa que irá participar"
+                  options={options}
+                  register={register}
+                  errors={errors}
+                />
+                <TextInput
+                  type="password"
+                  name="password"
+                  placeholder="Senha"
+                  register={register}
+                  errors={errors}
+                />
+                <TextInput
+                  type="password"
+                  name="repeatPassword"
+                  placeholder="Confirme a senha"
+                  register={register}
+                  errors={errors}
+                />
+                <CheckboxInput
+                  name="terms"
+                  text="Concorda com nossos termos"
+                  className="form__checkbox-box"
+                  register={register}
+                  errors={errors}
+                />
+                <Button size={1}>Finalizar</Button>
+              </form>
+              <motion.div className="toLogin" variants={itemVatiants}>
+                <p className="toLogin__question">Já possui conta?</p>
+                <Link to="/" className="toLogin__link">
+                  Fazer login
+                </Link>
+              </motion.div>
+            </motion.div>
+          </section>
+          <section className="main-title">
+            <h1>Criar conta</h1>
+          </section>
+        </main>
+      </Container>
+    </motion.div>
   );
 };

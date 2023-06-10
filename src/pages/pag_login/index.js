@@ -3,15 +3,16 @@ import { useGoogleLogin } from "@react-oauth/google";
 import { useLinkedIn } from "react-linkedin-login-oauth2";
 
 import { Container, MainText, Login } from "./style";
+import { containerVatiants, itemVatiants } from "../../styles/global";
+import { motion } from "framer-motion";
 
 import { TextInput } from "../../components/text_input";
 import { Button } from "../../components/button";
 
 import axios from "axios";
 
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
-import { Link } from "react-router-dom";
 import { Header } from "../../components/header";
 import logo from "../../imgs/logo.svg";
 
@@ -19,7 +20,7 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
-export const PagLogin = () => {
+export const PagLogin = ({ ...rest }) => {
   const [user, setUser] = useState([]);
 
   const navigate = useNavigate();
@@ -86,10 +87,18 @@ export const PagLogin = () => {
   }, [user, navigate]);
 
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+      {...rest}
+    >
       <Container>
         <Header>
-          <img src={logo} alt="" />
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
         </Header>
         <main>
           <MainText>
@@ -100,43 +109,53 @@ export const PagLogin = () => {
             <p className="skill-labs-company">Skill labs company</p>
           </MainText>
           <Login>
-            <h1>Sua conta</h1>
-            <form onSubmit={handleSubmit(onSubmitFunction)}>
-              <TextInput
-                placeholder="Email"
-                name="email"
-                register={register}
-                errors={errors}
-                className="input"
-              />
-              <TextInput
-                placeholder="Senha"
-                name="password"
-                register={register}
-                errors={errors}
-                className="input"
-                type="password"
-              />
-              <Link to="/esqueceusenha">Esqueceu sua senha?</Link>
-              <Button size={1}>Entrar</Button>
-            </form>
-            <div className="login-with-social-network">
-              <Button type={1} size={1} onClick={() => login()}>
-                Entrar com google
-              </Button>
-              <Button type={1} size={1} onClick={linkedInLogin} disabled>
-                Entrar com linkedin
-              </Button>
-            </div>
-            <div className="toRegister">
-              <p className="toRegister__question">Não possui conta?</p>
-              <Link to="/cadastro" className="toRegister__link">
-                Criar conta
-              </Link>
-            </div>
+            <motion.div
+              variants={containerVatiants}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.h1 variants={itemVatiants}>Sua conta</motion.h1>
+              <form onSubmit={handleSubmit(onSubmitFunction)}>
+                <TextInput
+                  placeholder="Email"
+                  name="email"
+                  register={register}
+                  errors={errors}
+                  className="input"
+                />
+                <TextInput
+                  placeholder="Senha"
+                  name="password"
+                  register={register}
+                  errors={errors}
+                  className="input"
+                  type="password"
+                />
+                <Link to="/esqueceusenha">
+                  <motion.span variants={itemVatiants}>
+                    Esqueceu sua senha?
+                  </motion.span>
+                </Link>
+                <Button size={1}>Entrar</Button>
+              </form>
+              <div className="login-with-social-network">
+                <Button type={1} size={1} onClick={() => login()}>
+                  Entrar com google
+                </Button>
+                <Button type={1} size={1} onClick={linkedInLogin} disabled>
+                  Entrar com linkedin
+                </Button>
+              </div>
+              <motion.div className="toRegister" variants={itemVatiants}>
+                <p className="toRegister__question">Não possui conta?</p>
+                <Link to="/cadastro" className="toRegister__link">
+                  Criar conta
+                </Link>
+              </motion.div>
+            </motion.div>
           </Login>
         </main>
       </Container>
-    </>
+    </motion.div>
   );
 };

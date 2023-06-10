@@ -37,8 +37,8 @@ export const customStyles = {
     right: "2.4rem",
     bottom: "auto",
     width: "10rem",
-    borderRadius: theme.borderRadius,
-    backgroundColor: theme.background4,
+    borderRadius: theme.main.borderRadius,
+    backgroundColor: theme.menu.background,
     border: "none",
     padding: 0,
   },
@@ -57,5 +57,17 @@ export const NavContainer = styled.nav`
   a {
     color: ${theme.main.colorFont};
     text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  button {
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    color: ${theme.main.colorFont};
+    &:hover {
+      cursor: pointer;
+    }
   }
 `;
