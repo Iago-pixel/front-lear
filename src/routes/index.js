@@ -8,6 +8,7 @@ import { PagRegister } from "../pages/pag_register";
 import { PagLesson } from "../pages/pag_lesson";
 
 import { AnimatePresence } from "framer-motion";
+import { PagLessonContent } from "../pages/pag_lesson_content";
 
 export const Router = () => {
   return (
@@ -18,6 +19,10 @@ export const Router = () => {
         <Route path="/linkedin" element={<LinkedInCallback />} />
         <Route path="/cadastro" element={<PagRegister />} />
         <Route path="/:module_id/:lesson_id" element={<PagLesson />} />
+        <Route
+          path="/:module_id/:lesson_id/conteudo"
+          element={<PagLessonContent />}
+        />
       </Routes>
     </AnimatePresence>
   );

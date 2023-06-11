@@ -1,8 +1,8 @@
 import { Container } from "./style";
 
-export const Lesson = ({ children, title }) => {
+export const Lesson = ({ children, title, ...rest }) => {
   return (
-    <Container>
+    <Container {...rest}>
       <h1>{title}</h1>
       {children}
     </Container>

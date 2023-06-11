@@ -8,9 +8,11 @@ export const Container = styled.article`
   border-radius: ${theme.main.borderRadius};
   margin: 0 auto;
   h1 {
-    font-size: 1.2rem;
+    font-size: ${theme.title.fontSize};
+    margin: 0 0 1rem;
   }
   p {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    max-width: 1000px;
   }
 `;
