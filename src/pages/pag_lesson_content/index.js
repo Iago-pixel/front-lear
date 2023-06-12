@@ -1,18 +1,28 @@
+// react
+import { useEffect, useState } from "react";
+
+// router dom
 import { useParams, useNavigate } from "react-router-dom";
 
+// style
 import { motion } from "framer-motion";
-
 import { Container } from "./style";
 
+// components
 import { Header } from "../../components/header";
 import { Button } from "../../components/button";
 import { Imagem } from "../../components/imagem";
-
-import { lessonArticles } from "../../service/mocks";
 import { Lesson } from "../../components/lesson";
+
+// mock
+import { lessonArticles } from "../../service/mocks";
 
 export const PagLessonContent = ({ ...rest }) => {
   let { module_id, lesson_id } = useParams();
+  const [lessonContent, setLessonContent] = useState(
+    lessonArticles.filter((article) => article.lesson_id == lesson_id)
+  );
+
   const navigate = useNavigate();
 
   const back = () => {
@@ -22,6 +32,13 @@ export const PagLessonContent = ({ ...rest }) => {
   const addInDiscord = () => {
     window.open("https://discord.gg/q9ZartMssw", "_blank", "noreferrer");
   };
+
+  useEffect(() => {
+    setLessonContent(
+      lessonArticles.filter((article) => article.lesson_id == lesson_id)
+    );
+  }, [lesson_id]);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -38,7 +55,7 @@ export const PagLessonContent = ({ ...rest }) => {
         </Header>
         <main>
           <div className="articles">
-            {lessonArticles.map((article, index) => (
+            {lessonContent.map((article, index) => (
               <Lesson title={article.title} key={index} className="article">
                 {article.text.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import { Header } from "../../components/header";
@@ -19,12 +20,18 @@ import { searchLessonId } from "../../service/util";
 export const PagLesson = ({ ...rest }) => {
   const navigate = useNavigate();
   let { module_id, lesson_id } = useParams();
-  const [currentLessonIndex, setCurrentLessonIndex] = useState(
-    classes.filter((lesson) => lesson.id == lesson_id)[0]["index"]
+
+  const [currentLesson, setCurrentLesson] = useState(
+    classes.filter((lesson) => lesson.id == lesson_id)[0]
   );
+
   const [moduleLength] = useState(
     classes.filter((lesson) => lesson.module_id == module_id).length
   );
+
+  useEffect(() => {
+    setCurrentLesson(classes.filter((lesson) => lesson.id == lesson_id)[0]);
+  }, [lesson_id]);
 
   const back = () => {
     navigate("/dashboard");
@@ -32,7 +39,6 @@ export const PagLesson = ({ ...rest }) => {
 
   const backLesson = (index) => {
     if (index > 1) {
-      setCurrentLessonIndex(index - 1);
       const lessonId = searchLessonId(module_id, index - 1);
       navigate(`/${module_id}/${lessonId}`);
     }
@@ -40,7 +46,6 @@ export const PagLesson = ({ ...rest }) => {
 
   const nextLesson = (index) => {
     if (index < moduleLength) {
-      setCurrentLessonIndex(index + 1);
       navigate(`/${module_id}/${index + 1}`);
     }
   };
@@ -48,7 +53,9 @@ export const PagLesson = ({ ...rest }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      animate={{
+        opacity: 1,
+      }}
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
       {...rest}
@@ -65,16 +72,10 @@ export const PagLesson = ({ ...rest }) => {
           animate="visible"
         >
           <section className="lesson">
-            <motion.h1 variants={itemVariants}>Exercitando o cerebro</motion.h1>
-            <Video
-              height="360"
-              width="640"
-              url="https://www.youtube.com/embed/BegzsDKhK3Q"
-            />
+            <motion.h1 variants={itemVariants}>{currentLesson.name}</motion.h1>
+            <Video height="360" width="640" url={currentLesson.video} />
             <motion.p className="lesson__intro" variants={itemVariants}>
-              Texto com uma descrição do conteúdo disponibilizado
-              hahahahahahhahahahahahahahahahahhahahahahahahahahahahahahahahhahahahahahahahahahahahahaha
-              ( três linhas )
+              {currentLesson.introduction}
             </motion.p>
             <Link
               to={`/${module_id}/${lesson_id}/conteudo`}
@@ -86,14 +87,14 @@ export const PagLesson = ({ ...rest }) => {
             </Link>
             <div className="lesson__move">
               <Button
-                onClick={() => backLesson(currentLessonIndex)}
-                disabled={currentLessonIndex === 1}
+                onClick={() => backLesson(currentLesson.index)}
+                disabled={currentLesson.index === 1}
               >
                 Anterior
               </Button>
               <Button
-                onClick={() => nextLesson(currentLessonIndex)}
-                disabled={currentLessonIndex === moduleLength}
+                onClick={() => nextLesson(currentLesson.index)}
+                disabled={currentLesson.index === moduleLength}
               >
                 Próxima
               </Button>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 
 import { Container } from "./style";
 
@@ -9,9 +10,14 @@ import { motion } from "framer-motion";
 import YouTube from "react-youtube";
 
 export const Video = ({ height, width, url, ...rest }) => {
-  const [videoId] = useState(url.split("/").reverse()[0]);
-  console.log(url);
-  console.log(videoId);
+  useEffect(() => {
+    setVideoId(takeVideoId(url));
+  }, [url]);
+
+  const takeVideoId = (url) => {
+    return url.split("/").reverse()[0];
+  };
+  const [videoId, setVideoId] = useState(takeVideoId(url));
 
   return (
     <Container className="box-video" height={height} width={width} {...rest}>
