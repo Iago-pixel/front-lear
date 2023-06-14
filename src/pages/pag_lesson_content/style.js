@@ -8,19 +8,9 @@ export const Container = styled.div`
   main {
     padding: 0 4rem;
   }
-  .articles {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
   .article {
-    margin: 0 0 2rem;
-    padding: 0.5rem 2rem;
-    &:first-child {
-      padding: 2rem;
-      margin-top: 2rem;
-      grid-column-start: 1;
-      grid-column-end: 3;
-    }
+    padding: 2rem;
+    margin-top: 2rem;
   }
   .article__images {
     margin: 1rem 0;
@@ -37,5 +27,25 @@ export const Container = styled.div`
       color: ${theme.main.colorFont};
       font-weight: bold;
     }
+  }
+  li {
+    margin: 0.5rem 0;
+  }
+  table,
+  td,
+  th {
+    border: 2px solid ${theme.main.background};
+    border-collapse: collapse;
+    text-align: center;
+    padding: 0.1rem 1rem;
+  }
+  table {
+    margin: 1rem;
+  }
+  th {
+    background-color: ${theme.main.background};
+  }
+  .red {
+    color: red;
   }
 `;

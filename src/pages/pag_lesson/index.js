@@ -1,21 +1,25 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+// react
+import { useState, useEffect } from "react";
 
+// router dom
+import { useNavigate, useParams, Link } from "react-router-dom";
+
+// components
 import { Header } from "../../components/header";
 import { Button } from "../../components/button";
 import { Video } from "../../components/video";
-import { Link } from "react-router-dom";
+import { CourseNav } from "../../components/course_nav";
 
+// style
 import { Container } from "./style";
-
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "../../styles/global";
 
-import { classes } from "../../service/mocks";
-import { CourseNav } from "../../components/course_nav";
-
+// utils
 import { searchLessonId } from "../../service/util";
+
+// mocks
+import { classes } from "../../service/mocks";
 
 export const PagLesson = ({ ...rest }) => {
   const navigate = useNavigate();
@@ -28,6 +32,9 @@ export const PagLesson = ({ ...rest }) => {
   const [moduleLength] = useState(
     classes.filter((lesson) => lesson.module_id == module_id).length
   );
+
+  const [initial, setInitial] = useState("hidden");
+  const [animate, setAnimate] = useState("visible");
 
   useEffect(() => {
     setCurrentLesson(classes.filter((lesson) => lesson.id == lesson_id)[0]);
@@ -68,8 +75,8 @@ export const PagLesson = ({ ...rest }) => {
         </Header>
         <motion.main
           variants={containerVariants}
-          initial="hidden"
-          animate="visible"
+          initial={initial}
+          animate={animate}
         >
           <section className="lesson">
             <motion.h1 variants={itemVariants}>{currentLesson.name}</motion.h1>
@@ -100,7 +107,12 @@ export const PagLesson = ({ ...rest }) => {
               </Button>
             </div>
           </section>
-          <CourseNav classes={classes} className="pag-lesson__course-nav" />
+          <CourseNav
+            classes={classes}
+            className="pag-lesson__course-nav"
+            setInitial={setInitial}
+            setAnimate={setAnimate}
+          />
         </motion.main>
       </Container>
     </motion.div>

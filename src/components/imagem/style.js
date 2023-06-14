@@ -2,12 +2,19 @@ import styled from "styled-components";
 import { theme } from "../../styles/global";
 
 export const Container = styled.figure`
-  border-radius: ${theme.main.borderRadius};
-  width: 300px;
-  height: 200px;
-  overflow: hidden;
+  width: ${({ width }) => width};
   img {
-    width: 300px;
-    height: 200px;
+    width: ${({ width }) => width};
+    height: ${({ height }) => height};
+  }
+  .border {
+    border-radius: ${theme.main.borderRadius};
+    width: ${({ width }) => width};
+    height: ${({ height }) => height};
+    overflow: hidden;
+  }
+  figcaption {
+    font-size: 0.6rem;
+    text-align: center;
   }
 `;

@@ -1,14 +1,17 @@
+// router dom
+import { Link } from "react-router-dom";
+
+// style
 import { Container } from "./style";
+import { motion } from "framer-motion";
+import { itemVariants } from "../../styles/global";
+import { useCollapse } from "react-collapsed";
+
+// components
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretRight, faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
-import { motion } from "framer-motion";
-import { itemVariants } from "../../styles/global";
-
-import { useCollapse } from "react-collapsed";
-
-import { Link } from "react-router-dom";
-
+// mocks
 import { modules } from "../../service/mocks";
 
 export const ModuleNav = ({ title, classes, disabled, ...rest }) => {

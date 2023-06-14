@@ -1,14 +1,19 @@
+// router dom
+import { Link } from "react-router-dom";
+
+// components
 import { ModuleNav } from "../../components/module_nav";
 import { Header } from "../../components/header";
 
+// style
 import { Container } from "./style";
-import logo from "../../imgs/logo.svg";
-
 import { motion } from "framer-motion";
 import { containerVariants } from "../../styles/global";
 
-import { Link } from "react-router-dom";
+// images
+import logo from "../../imgs/logo.svg";
 
+// mocks
 import { courses, modules, classes } from "../../service/mocks";
 
 export const Dashboard = ({ ...rest }) => {

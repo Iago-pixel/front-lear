@@ -1,24 +1,29 @@
-import React, { useState, useEffect } from "react";
-import { useGoogleLogin } from "@react-oauth/google";
-import { useLinkedIn } from "react-linkedin-login-oauth2";
+// react
+import { useState, useEffect } from "react";
 
+// router dom
+import { useNavigate, Link } from "react-router-dom";
+
+// style
 import { Container, MainText, Login } from "./style";
 import { containerVariants, itemVariants } from "../../styles/global";
 import { motion } from "framer-motion";
 
+// components
 import { TextInput } from "../../components/text_input";
 import { Button } from "../../components/button";
-
-import axios from "axios";
-
-import { useNavigate, Link } from "react-router-dom";
-
 import { Header } from "../../components/header";
+
+// images
 import logo from "../../imgs/logo.svg";
 
+// others
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { useGoogleLogin } from "@react-oauth/google";
+import { useLinkedIn } from "react-linkedin-login-oauth2";
+import axios from "axios";
 
 export const PagLogin = ({ ...rest }) => {
   const [user, setUser] = useState([]);

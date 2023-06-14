@@ -14,8 +14,9 @@ export const Container = styled.button`
   min-height: 2rem;
   width: ${({ size, type }) => theme.button[type].sizeWidth[size]};
   height: ${({ size, type }) => theme.button[type].sizeHeight[size]};
-  font-size: 1rem;
+  font-size: ${({ size }) => (size === 2 ? theme.title.fontSize : "1rem")};
   font-weight: bold;
+  padding: 0.5rem 1rem;
   &:hover {
     cursor: ${({ disabled }) => (!disabled ? "pointer" : "not-allowed")};
     background-color: transparent;

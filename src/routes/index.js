@@ -1,14 +1,19 @@
+// router dom
 import { Routes, Route } from "react-router-dom";
 
-import { LinkedInCallback } from "react-linkedin-login-oauth2";
-
+// components
 import { Dashboard } from "../pages/dashboard";
 import { PagLogin } from "../pages/pag_login";
 import { PagRegister } from "../pages/pag_register";
 import { PagLesson } from "../pages/pag_lesson";
-
-import { AnimatePresence } from "framer-motion";
 import { PagLessonContent } from "../pages/pag_lesson_content";
+import { UserArea } from "../pages/user_area";
+
+// style
+import { AnimatePresence } from "framer-motion";
+
+// others
+import { LinkedInCallback } from "react-linkedin-login-oauth2";
 
 export const Router = () => {
   return (
@@ -23,6 +28,7 @@ export const Router = () => {
           path="/:module_id/:lesson_id/conteudo"
           element={<PagLessonContent />}
         />
+        <Route path="/area_do_usuario" element={<UserArea />} />
       </Routes>
     </AnimatePresence>
   );

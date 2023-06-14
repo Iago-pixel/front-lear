@@ -1,11 +1,18 @@
+// react
 import { useState } from "react";
 
+// router dom
+import { Link, useNavigate } from "react-router-dom";
+
+//style
 import { Container, customStyles, NavContainer } from "./style";
 
+// components
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
-
-import { Link, useNavigate } from "react-router-dom";
+import {
+  faCircleUser,
+  faArrowRightFromBracket,
+} from "@fortawesome/free-solid-svg-icons";
 import Modal from "react-modal";
 
 export const Header = ({ children, hasPerfil, ...rest }) => {
@@ -38,7 +45,7 @@ export const Header = ({ children, hasPerfil, ...rest }) => {
         <NavContainer>
           <ul>
             <li>
-              <Link to="/perfil">Area do aluno</Link>
+              <Link to="/area_do_usuario">Area do aluno</Link>
             </li>
             <li>
               <button className="head__button" onClick={() => logout()}>
@@ -48,6 +55,9 @@ export const Header = ({ children, hasPerfil, ...rest }) => {
           </ul>
         </NavContainer>
       </Modal>
+      <button className="head__button--exit-only" onClick={() => logout()}>
+        <FontAwesomeIcon icon={faArrowRightFromBracket} />
+      </button>
     </Container>
   );
 };

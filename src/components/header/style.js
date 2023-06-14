@@ -20,6 +20,18 @@ export const Container = styled.header`
       cursor: pointer;
     }
   }
+  .head__button--exit-only {
+    background-color: transparent;
+    border: none;
+    display: ${({ hasExit }) => (hasExit ? "flex" : "none")};
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    color: ${theme.main.colorFont};
+    &:hover {
+      cursor: pointer;
+    }
+  }
 `;
 
 export const customStyles = {

@@ -1,8 +1,9 @@
+// style
 import { Container } from "./style";
-
 import { itemVariants } from "../../styles/global";
 import { motion } from "framer-motion";
 
+// components
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 

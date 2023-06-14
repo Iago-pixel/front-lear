@@ -1,12 +1,12 @@
-import { useState } from "react";
-import { useEffect } from "react";
+// react
+import { useState, useEffect } from "react";
 
+// style
 import { Container } from "./style";
-
 import { itemVariants } from "../../styles/global";
-
 import { motion } from "framer-motion";
 
+// components
 import YouTube from "react-youtube";
 
 export const Video = ({ height, width, url, ...rest }) => {

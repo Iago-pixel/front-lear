@@ -1,19 +1,25 @@
+// router dom
+import { Link, useNavigate } from "react-router-dom";
+
+// components
 import { Header } from "../../components/header";
-import logo from "../../imgs/logo.svg";
 import { TextInput } from "../../components/text_input";
 import { Button } from "../../components/button";
 import { SelectInput } from "../../components/select_input";
 import { CheckboxInput } from "../../components/checkbox_input";
-import { Link, useNavigate } from "react-router-dom";
 
+// style
 import { Container } from "./style";
 import { containerVariants, itemVariants } from "../../styles/global";
+import { motion } from "framer-motion";
 
+// images
+import logo from "../../imgs/logo.svg";
+
+// others
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-
-import { motion } from "framer-motion";
 
 export const PagRegister = ({ ...rest }) => {
   const options = [{ name: "Curso frontend", value: "curso_frontend" }];

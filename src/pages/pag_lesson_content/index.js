@@ -55,19 +55,9 @@ export const PagLessonContent = ({ ...rest }) => {
         </Header>
         <main>
           <div className="articles">
-            {lessonContent.map((article, index) => (
-              <Lesson title={article.title} key={index} className="article">
-                {article.text.map((paragraph, index) => (
-                  <p key={index}>{paragraph}</p>
-                ))}
-                {article.img_url && (
-                  <Imagem
-                    src={article.img_url}
-                    alt={article.img_alt}
-                    figcaption={article.img_alt}
-                    className="article__images"
-                  />
-                )}
+            {lessonContent.map(({ title, Content }, index) => (
+              <Lesson title={title} key={index} className="article">
+                <Content />
               </Lesson>
             ))}
           </div>
