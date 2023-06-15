@@ -37,24 +37,18 @@ export const Dashboard = ({ ...rest }) => {
           initial="hidden"
           animate="visible"
         >
-          <li>
-            <ModuleNav title={modules[0]["title"]} classes={classes} />
-          </li>
-          <li>
-            <ModuleNav title={modules[0]["title"]} classes={classes} disabled />
-          </li>
-          <li>
-            <ModuleNav title={modules[0]["title"]} classes={classes} disabled />
-          </li>
-          <li>
-            <ModuleNav title={modules[0]["title"]} classes={classes} disabled />
-          </li>
-          <li>
-            <ModuleNav title={modules[0]["title"]} classes={classes} disabled />
-          </li>
-          <li>
-            <ModuleNav title={modules[0]["title"]} classes={classes} disabled />
-          </li>
+          {modules.map((module, index) => {
+            return (
+              <li>
+                <ModuleNav
+                  key={index}
+                  title={module.title}
+                  classes={classes}
+                  disabled={module.disabled}
+                />
+              </li>
+            );
+          })}
         </motion.ul>
       </Container>
     </motion.div>

@@ -8,6 +8,8 @@ import { PagRegister } from "../pages/pag_register";
 import { PagLesson } from "../pages/pag_lesson";
 import { PagLessonContent } from "../pages/pag_lesson_content";
 import { UserArea } from "../pages/user_area";
+import { Profile } from "../pages/profile";
+import { PagPerformance } from "../pages/pag_performance";
 
 // style
 import { AnimatePresence } from "framer-motion";
@@ -29,6 +31,8 @@ export const Router = () => {
           element={<PagLessonContent />}
         />
         <Route path="/area_do_usuario" element={<UserArea />} />
+        <Route path="/perfil" element={<Profile />} />
+        <Route path="/desempenho" element={<PagPerformance />} />
       </Routes>
     </AnimatePresence>
   );

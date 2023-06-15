@@ -54,9 +54,21 @@ export const theme = {
     colorFont: "#FFFFFF",
     background: "rgba(116,228,228,0.13)",
   },
+  genericBox: {
+    background: "rgba(116,228,228,0.13)",
+  },
   scrollbar: {
     HandleColor: "#488F8F",
     scrollbarColor: "#FFF",
+  },
+  noImage: {
+    color: "#74E4E5",
+    fontSize: "8rem",
+  },
+  percentageCircle: {
+    progressColor: "#74E4E5",
+    bgColor: "#FFF",
+    textColor: "#74E4E5",
   },
 };
 

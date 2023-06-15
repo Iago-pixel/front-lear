@@ -7729,6 +7729,11 @@ react-app-polyfill@^3.0.0:
     regenerator-runtime "^0.13.9"
     whatwg-fetch "^3.6.2"
 
+react-circle@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/react-circle/-/react-circle-1.1.1.tgz#f97ccf3e2a37a91ea50280ea8262420e0d1de60c"
+  integrity sha512-iphQfy+MRuNuBqJyZlGKbxyBJhDszaiT5eTiilFFPuwo5nsW5k/uH0KCq/sXXBMiJpLJ/Ly3arkUDvrK62Zung==
+
 react-collapsed@^4.0.2:
   version "4.0.2"
   resolved "https://registry.yarnpkg.com/react-collapsed/-/react-collapsed-4.0.2.tgz#5f2b2f9695c6f3858b44771dc36fa40f63b8fa51"

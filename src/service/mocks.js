@@ -9,25 +9,28 @@ export const users = [
     id: "1",
     name: "Lear",
     email: "lear@mail.com",
+    number: "9 9999-9999",
     password: "12345678Cc*",
-    accessLevel: 2,
-    siteId: "1",
+    access_level: 2,
+    site_id: "1",
   },
   {
     id: "2",
     name: "Iago Vinícius",
     email: "iago@mail.com",
+    number: "9 9999-9999",
     password: "12345678Cc*",
-    accessLevel: 1,
-    siteId: "1",
+    access_level: 1,
+    site_id: "1",
   },
   {
     id: "3",
     name: "Maria Silva",
     email: "maria@mail.com",
+    number: "9 9999-9999",
     password: "12345678Cc*",
-    accessLevel: 0,
-    siteId: "1",
+    access_level: 0,
+    site_id: "1",
   },
 ];
 
@@ -43,7 +46,8 @@ export const courses = [
   {
     id: "1",
     name: "Curso frontend",
-    siteId: "1",
+    site_id: "1",
+    percentage_complete: 6,
   },
 ];
 
@@ -52,6 +56,43 @@ export const modules = [
     id: "1",
     title: "Lógica",
     course_id: "1",
+    disabled: false,
+    percentage_complete: 35,
+  },
+  {
+    id: "2",
+    title: "Exemplo",
+    course_id: "1",
+    disabled: true,
+    percentage_complete: 0,
+  },
+  {
+    id: "3",
+    title: "Exemplo",
+    course_id: "1",
+    disabled: true,
+    percentage_complete: 0,
+  },
+  {
+    id: "4",
+    title: "Exemplo",
+    course_id: "1",
+    disabled: true,
+    percentage_complete: 0,
+  },
+  {
+    id: "5",
+    title: "Exemplo",
+    course_id: "1",
+    disabled: true,
+    percentage_complete: 0,
+  },
+  {
+    id: "6",
+    title: "Exemplo",
+    course_id: "1",
+    disabled: true,
+    percentage_complete: 0,
   },
 ];
 

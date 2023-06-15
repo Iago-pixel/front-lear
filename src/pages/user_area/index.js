@@ -1,5 +1,5 @@
 // router dom
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 // components
 import { Header } from "../../components/header";
@@ -26,7 +26,9 @@ export const UserArea = ({ ...rest }) => {
     >
       <Container {...rest}>
         <Header hasExit>
-          <img src={logo} alt="" />
+          <Link to="/">
+            <img src={logo} alt="" />
+          </Link>
         </Header>
         <main>
           <div className="main__header">
@@ -52,7 +54,11 @@ export const UserArea = ({ ...rest }) => {
                 </Button>
               </div>
               <div className="main__nav__button-box">
-                <Button type={1} size={2}>
+                <Button
+                  type={1}
+                  size={2}
+                  onClick={() => navigate("/desempenho")}
+                >
                   Desempenho
                 </Button>
               </div>

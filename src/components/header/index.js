@@ -6,13 +6,13 @@ import { Link, useNavigate } from "react-router-dom";
 
 //style
 import { Container, customStyles, NavContainer } from "./style";
-
-// components
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleUser,
   faArrowRightFromBracket,
 } from "@fortawesome/free-solid-svg-icons";
+
+// components
 import Modal from "react-modal";
 
 export const Header = ({ children, hasPerfil, ...rest }) => {
