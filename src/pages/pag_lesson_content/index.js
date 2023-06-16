@@ -11,11 +11,13 @@ import { Container } from "./style";
 // components
 import { Header } from "../../components/header";
 import { Button } from "../../components/button";
-import { Imagem } from "../../components/imagem";
 import { Lesson } from "../../components/lesson";
 
 // mock
 import { lessonArticles } from "../../service/mocks";
+
+// others
+import { addInDiscord } from "../../service/util";
 
 export const PagLessonContent = ({ ...rest }) => {
   let { module_id, lesson_id } = useParams();
@@ -27,10 +29,6 @@ export const PagLessonContent = ({ ...rest }) => {
 
   const back = () => {
     navigate(`/${module_id}/${lesson_id}`);
-  };
-
-  const addInDiscord = () => {
-    window.open("https://discord.gg/q9ZartMssw", "_blank", "noreferrer");
   };
 
   useEffect(() => {

@@ -8,3 +8,7 @@ export const searchLessonId = (module_id, index) => {
 
   return lesson.id;
 };
+
+export const addInDiscord = () => {
+  window.open("https://discord.gg/q9ZartMssw", "_blank", "noreferrer");
+};

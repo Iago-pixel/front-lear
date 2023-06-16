@@ -6,27 +6,25 @@ export const Container = styled.div`
   main {
     padding: 0 2rem;
   }
-  h1 {
+  .main__title {
     color: ${theme.main.colorFont};
     font-size: ${theme.title.fontSize};
-  }
-  .main__title {
     padding: 0 0 0 1rem;
   }
 `;
 
-export const PerformanceContainer = styled.section`
-  margin: 0;
-  padding: 0 2rem;
+export const ProfileContent = styled.section`
+  padding: 2rem 6rem 2rem 2rem;
+  max-width: 50rem;
   border-radius: ${theme.main.borderRadius};
   background-color: ${theme.genericBox.background};
-  .progress {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 2rem;
+  form {
+    position: relative;
+    padding: 0 0 3rem;
   }
-  .current-module__name {
-    font-weight: bold;
+  .send-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
   }
 `;

@@ -142,6 +142,15 @@ export const classes = [
       'A proposição condicional é um conceito muito importante da lógica. Ele cria uma relação de implicação entre duas afirmações. É representado pelo símbolo "→" ou pelo “se... então”. Nela há duas partes: a antecedente e a consequente...',
     module_id: "1",
   },
+  {
+    id: "6",
+    index: 6,
+    name: "Importância dos jogos",
+    video: "https://youtu.be/upvL8w5-2ZU",
+    introduction:
+      "Jogos podem criar ambientes desafiadores aonde temos que resolver problemas, tomar decisões rápidas com informações limitadas, identificar padrões, criar estratégias, fazer avaliações lógicas...",
+    module_id: "1",
+  },
 ];
 
 export const lessonArticles = [
@@ -944,5 +953,81 @@ export const lessonArticles = [
       );
     },
     lesson_id: "5",
+  },
+  {
+    id: "14",
+    title: "Gabarito do exercício anterior",
+    Content: () => {
+      return (
+        <>
+          <table>
+            <tr>
+              <th>p</th>
+              <th>q</th>
+              <th>P ⇿ q</th>
+            </tr>
+            <tr>
+              <td>V</td>
+              <td>V</td>
+              <td>V</td>
+            </tr>
+            <tr>
+              <td>V</td>
+              <td>F</td>
+              <td>F</td>
+            </tr>
+            <tr>
+              <td>F</td>
+              <td>V</td>
+              <td>F</td>
+            </tr>
+            <tr>
+              <td>F</td>
+              <td>F</td>
+              <td>V</td>
+            </tr>
+          </table>
+        </>
+      );
+    },
+    lesson_id: "6",
+  },
+  {
+    id: "15",
+    title: "Importância dos jogos no desenvolvimento do raciocínio lógico",
+    Content: () => {
+      return (
+        <>
+          <p>
+            Jogos podem criar ambientes desafiadores aonde temos que resolver
+            problemas, tomar decisões rápidas com informações limitadas,
+            identificar padrões, criar estratégias, fazer avaliações lógicas...
+            ou seja, ter a experiência prática de usar suas habilidades lógicas
+            e aprimorar elas! Será que você anda desenvolvendo suas habilidades
+            com lógica em seu momento de lazer e nem sabia?
+          </p>
+          <p>
+            Iremos usar esse potencial em algumas atividades na sequencia desse
+            curso.
+          </p>
+        </>
+      );
+    },
+    lesson_id: "6",
+  },
+  {
+    id: "16",
+    title: "Atividade",
+    Content: () => {
+      return (
+        <>
+          <p>Jogue esse joguinho de navegador até o fim:</p>
+          <a href="https://poki.com.br/g/pink" target="_blank" rel="noreferrer">
+            Pink
+          </a>
+        </>
+      );
+    },
+    lesson_id: "6",
   },
 ];

@@ -1,14 +1,12 @@
 // component
 import { Header } from "../../components/header";
-import { PercentageBox } from "../../components/percentage_box";
 import { BackButton } from "../../components/back_button";
 
 // style
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import { Container, ProfileHeader, ProfileContent } from "./style";
-import { users, modules, courses } from "../../service/mocks";
-import { theme } from "../../styles/global";
+import { users } from "../../service/mocks";
 import { motion } from "framer-motion";
 
 export const Profile = ({ ...rest }) => {

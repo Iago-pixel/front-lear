@@ -8,6 +8,7 @@ export const TextInput = ({
   errors,
   placeholder,
   type = "text",
+  colorType = 0,
   ...rest
 }) => {
   return (
@@ -17,6 +18,7 @@ export const TextInput = ({
           name={name}
           placeholder={placeholder}
           type={type}
+          colorType={colorType}
           {...register(name)}
         />
         <span className="error">{errors[name]?.message}</span>

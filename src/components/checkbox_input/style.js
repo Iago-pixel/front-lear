@@ -21,7 +21,7 @@ export const Container = styled.div`
     padding-left: 1rem;
   }
   .error {
-    color: ${theme.input.colorError};
+    color: ${theme.input[0].colorError};
     font-size: 0.8rem;
   }
 `;

@@ -10,12 +10,12 @@ export const Container = styled.div`
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background-color: ${theme.input.background};
+    background-color: ${theme.input[0].background};
     border: none;
     border-radius: ${theme.main.borderRadius};
-    width: ${theme.input.selectWidth};
-    height: ${theme.input.height};
-    color: ${theme.input.colorFont};
+    width: ${theme.input[0].selectWidth};
+    height: ${theme.input[0].height};
+    color: ${theme.input[0].colorFont};
     font-weight: bold;
     font-size: 1rem;
     padding: 0 0 0 1rem;
@@ -40,7 +40,7 @@ export const Container = styled.div`
   .error {
     position: absolute;
     bottom: -1rem;
-    color: ${theme.input.colorError};
+    color: ${theme.input[0].colorError};
     font-size: 0.8rem;
   }
 `;

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 export const PercentageBox = ({
   percentage_complete,
   size,
-  title,
+  children,
   fontSize = "1rem",
   ...rest
 }) => {
@@ -28,7 +28,7 @@ export const PercentageBox = ({
         animate={true}
         animationDuration="2s"
       />
-      <p className="title">{title}</p>
+      <p className="title">{children}</p>
     </Container>
   );
 };

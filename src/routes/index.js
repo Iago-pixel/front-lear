@@ -10,6 +10,8 @@ import { PagLessonContent } from "../pages/pag_lesson_content";
 import { UserArea } from "../pages/user_area";
 import { Profile } from "../pages/profile";
 import { PagPerformance } from "../pages/pag_performance";
+import { PagCertificate } from "../pages/pag_certificate";
+import { PagSuport } from "../pages/pag_suport";
 
 // style
 import { AnimatePresence } from "framer-motion";
@@ -33,6 +35,8 @@ export const Router = () => {
         <Route path="/area_do_usuario" element={<UserArea />} />
         <Route path="/perfil" element={<Profile />} />
         <Route path="/desempenho" element={<PagPerformance />} />
+        <Route path="/certificado" element={<PagCertificate />} />
+        <Route path="/ajuda" element={<PagSuport />} />
       </Routes>
     </AnimatePresence>
   );

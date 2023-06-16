@@ -8,38 +8,38 @@ export const Container = styled.div`
   .error {
     position: absolute;
     bottom: -1rem;
-    color: ${theme.input.colorError};
+    color: ${theme.input[0].colorError};
     font-size: 0.8rem;
   }
 `;
 
 export const InputStyled = styled.input`
-  background-color: ${theme.input.background};
+  background-color: ${({ colorType }) => theme.input[colorType].background};
   border: none;
   border-radius: ${theme.main.borderRadius};
-  width: ${theme.input.width};
-  height: ${theme.input.height};
-  color: ${theme.input.colorFont};
-  font-weight: bold;
-  padding: 0 0 0 1rem;
+  width: ${({ colorType }) => theme.input[colorType].width};
+  height: ${({ colorType }) => theme.input[colorType].height};
+  color: ${({ colorType }) => theme.input[colorType].colorFont};
+  font-weight: ${({ colorType }) => (colorType === 0 ? "bold" : "normal")};
+  padding: 0 0 0 ${({ colorType }) => colorType + 1}rem;
   margin-bottom: 0.5rem;
   &::-webkit-input-placeholder {
     /* Edge */
-    color: ${theme.input.colorFont};
+    color: ${({ colorType }) => theme.input[colorType].colorFont};
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: ${({ colorType }) => (colorType === 0 ? "bold" : "normal")};
   }
 
   &:-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    color: ${theme.input.colorFont};
+    color: ${({ colorType }) => theme.input[colorType].colorFont};
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: ${({ colorType }) => (colorType === 0 ? "bold" : "normal")};
   }
 
   &::placeholder {
-    color: ${theme.input.colorFont};
+    color: ${({ colorType }) => theme.input[colorType].colorFont};
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: ${({ colorType }) => (colorType === 0 ? "bold" : "normal")};
   }
 `;

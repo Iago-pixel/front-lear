@@ -33,15 +33,21 @@ export const PagPerformance = ({ ...rest }) => {
                   size={300}
                   title={`Modulo atual: ${modules[0].title}`}
                   fontSize={theme.title.fontSize}
-                />
+                >
+                  Modulo atual:{" "}
+                  <span className="current-module__name">
+                    {modules[0].title}
+                  </span>
+                </PercentageBox>
               </div>
               <div className="progress__total">
                 <PercentageBox
                   percentage_complete={courses[0].percentage_complete}
                   size={300}
                   fontSize={theme.title.fontSize}
-                  title="Total"
-                />
+                >
+                  Total
+                </PercentageBox>
               </div>
             </div>
           </PerformanceContainer>

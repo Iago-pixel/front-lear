@@ -50,13 +50,13 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: ${theme.input.width};
+    width: ${theme.input[0].width};
   }
   .toLogin {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: ${theme.input.width};
+    width: ${theme.input[0].width};
     margin-top: 0.5rem;
   }
   .toLogin__question {

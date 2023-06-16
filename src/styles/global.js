@@ -12,15 +12,24 @@ export const theme = {
   link: {
     colorFont: "#74E4E5",
   },
-  input: {
-    background: "#FFFFFF",
-    colorFont: "#000000",
-    fontWeight: "bold",
-    width: "20rem",
-    selectWidth: "21rem",
-    height: "3rem",
-    colorError: "red",
-  },
+  input: [
+    {
+      background: "#FFFFFF",
+      colorFont: "#000000",
+      fontWeight: "bold",
+      width: "20rem",
+      selectWidth: "21rem",
+      height: "3rem",
+      colorError: "red",
+    },
+    {
+      background: "rgba(116,228,228,0.13)",
+      colorFont: "#FFF",
+      width: "100%",
+      height: "3rem",
+      colorError: "red",
+    },
+  ],
   button: [
     {
       background: "#74E4E5",

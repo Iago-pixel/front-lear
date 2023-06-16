@@ -12,6 +12,7 @@ import { containerVariants } from "../../styles/global";
 
 // others
 import logo from "../../imgs/logo.svg";
+import { addInDiscord } from "../../service/util";
 
 export const UserArea = ({ ...rest }) => {
   const navigate = useNavigate();
@@ -63,17 +64,21 @@ export const UserArea = ({ ...rest }) => {
                 </Button>
               </div>
               <div className="main__nav__button-box">
-                <Button type={1} size={2}>
+                <Button type={1} size={2} onClick={() => navigate("/ajuda")}>
                   Fale com professor
                 </Button>
               </div>
               <div className="main__nav__button-box">
-                <Button type={1} size={2}>
+                <Button type={1} size={2} onClick={() => addInDiscord()}>
                   Comunidade
                 </Button>
               </div>
               <div className="main__nav__button-box">
-                <Button type={1} size={2}>
+                <Button
+                  type={1}
+                  size={2}
+                  onClick={() => navigate("/certificado")}
+                >
                   Certificado
                 </Button>
               </div>

@@ -18,6 +18,7 @@
     "react-circle": "^1.1.1",
     "react-collapsed": "^4.0.2",
     "react-dom": "^18.2.0",
+    "react-email": "^1.9.3",
     "react-hook-form": "^7.44.3",
     "react-linkedin-login-oauth2": "^2.0.1",
     "react-modal": "^3.16.1",
