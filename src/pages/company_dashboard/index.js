@@ -14,7 +14,7 @@ import { containerVariants } from "../../styles/global";
 import logo from "../../imgs/logo.svg";
 import { addInDiscord } from "../../service/util";
 
-export const UserArea = ({ ...rest }) => {
+export const CompanyDashboard = ({ ...rest }) => {
   const navigate = useNavigate();
 
   return (
@@ -26,16 +26,16 @@ export const UserArea = ({ ...rest }) => {
       {...rest}
     >
       <Container {...rest}>
-        <Header hasExit>
-          <Link to="/">
+        <Header hasExit restricted>
+          <Link to="/login_restrito">
             <img src={logo} alt="" />
           </Link>
         </Header>
         <main>
           <div className="main__header">
-            <h1>Area do aluno</h1>
-            <Button onClick={() => navigate("/dashboard")}>
-              Assistir aula
+            <h1>Area da empresa</h1>
+            <Button onClick={() => navigate("/editar_plataforma")}>
+              <span>Editar sua plataforma</span>
             </Button>
           </div>
           <motion.div
@@ -45,7 +45,7 @@ export const UserArea = ({ ...rest }) => {
           >
             <div className="main__nav">
               <div className="main__nav__button-box">
-                <Button size={2} onClick={() => navigate("/perfil")}>
+                <Button size={2} onClick={() => navigate("/perfil_empresa")}>
                   Minha conta
                 </Button>
               </div>
@@ -58,14 +58,14 @@ export const UserArea = ({ ...rest }) => {
                 <Button
                   type={1}
                   size={2}
-                  onClick={() => navigate("/desempenho")}
+                  onClick={() => navigate("/desempenho_curso")}
                 >
                   Desempenho
                 </Button>
               </div>
               <div className="main__nav__button-box">
                 <Button type={1} size={2} onClick={() => navigate("/ajuda")}>
-                  Fale com professor
+                  Fale com o suporte
                 </Button>
               </div>
               <div className="main__nav__button-box">

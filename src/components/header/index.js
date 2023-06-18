@@ -15,7 +15,7 @@ import {
 // components
 import Modal from "react-modal";
 
-export const Header = ({ children, hasPerfil, ...rest }) => {
+export const Header = ({ children, hasPerfil, restricted, ...rest }) => {
   const [modalIsOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
@@ -28,7 +28,11 @@ export const Header = ({ children, hasPerfil, ...rest }) => {
   };
 
   const logout = () => {
-    navigate("/");
+    if (restricted) {
+      navigate("/login_restrito");
+    } else {
+      navigate("/");
+    }
   };
 
   return (

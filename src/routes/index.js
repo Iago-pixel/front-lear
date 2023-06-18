@@ -12,6 +12,9 @@ import { Profile } from "../pages/profile";
 import { PagPerformance } from "../pages/pag_performance";
 import { PagCertificate } from "../pages/pag_certificate";
 import { PagSuport } from "../pages/pag_suport";
+import { PagRestrictedLogin } from "../pages/pag_restricted_login";
+import { CompanyDashboard } from "../pages/company_dashboard";
+import { PagEdit } from "../pages/pag_edit";
 
 // style
 import { AnimatePresence } from "framer-motion";
@@ -37,6 +40,9 @@ export const Router = () => {
         <Route path="/desempenho" element={<PagPerformance />} />
         <Route path="/certificado" element={<PagCertificate />} />
         <Route path="/ajuda" element={<PagSuport />} />
+        <Route path="/login_restrito" element={<PagRestrictedLogin />} />
+        <Route path="/dashboard_empresa" element={<CompanyDashboard />} />
+        <Route path="/editar_plataforma" element={<PagEdit />} />
       </Routes>
     </AnimatePresence>
   );
