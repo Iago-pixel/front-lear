@@ -11,7 +11,7 @@ import {
 
 import { theme } from "../../../styles/global";
 
-export const ThemeMockReducer = (state = theme, action) => {
+export const themeMockReducer = (state = theme, action) => {
   switch (action.type) {
     case CHANGE_MAIN_COLORS:
       const { change } = action;

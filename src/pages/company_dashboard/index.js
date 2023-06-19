@@ -27,15 +27,15 @@ export const CompanyDashboard = ({ ...rest }) => {
     >
       <Container {...rest}>
         <Header hasExit restricted>
-          <Link to="/login_restrito">
+          <Link to="/">
             <img src={logo} alt="" />
           </Link>
         </Header>
         <main>
           <div className="main__header">
             <h1>Area da empresa</h1>
-            <Button onClick={() => navigate("/editar_plataforma")}>
-              <span>Editar sua plataforma</span>
+            <Button onClick={() => navigate("/nome_empresa")}>
+              <span>Sua plataforma</span>
             </Button>
           </div>
           <motion.div
@@ -45,7 +45,7 @@ export const CompanyDashboard = ({ ...rest }) => {
           >
             <div className="main__nav">
               <div className="main__nav__button-box">
-                <Button size={2} onClick={() => navigate("/perfil_empresa")}>
+                <Button size={2} onClick={() => navigate("/perfil")}>
                   Minha conta
                 </Button>
               </div>

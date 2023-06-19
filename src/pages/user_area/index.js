@@ -34,7 +34,7 @@ export const UserArea = ({ ...rest }) => {
         <main>
           <div className="main__header">
             <h1>Area do aluno</h1>
-            <Button onClick={() => navigate("/dashboard")}>
+            <Button onClick={() => navigate("/nome_empresa/dashboard")}>
               Assistir aula
             </Button>
           </div>
@@ -45,7 +45,10 @@ export const UserArea = ({ ...rest }) => {
           >
             <div className="main__nav">
               <div className="main__nav__button-box">
-                <Button size={2} onClick={() => navigate("/perfil")}>
+                <Button
+                  size={2}
+                  onClick={() => navigate("/nome_empresa/perfil")}
+                >
                   Minha conta
                 </Button>
               </div>
@@ -58,13 +61,17 @@ export const UserArea = ({ ...rest }) => {
                 <Button
                   type={1}
                   size={2}
-                  onClick={() => navigate("/desempenho")}
+                  onClick={() => navigate("/nome_empresa/desempenho")}
                 >
                   Desempenho
                 </Button>
               </div>
               <div className="main__nav__button-box">
-                <Button type={1} size={2} onClick={() => navigate("/ajuda")}>
+                <Button
+                  type={1}
+                  size={2}
+                  onClick={() => navigate("/nome_empresa/ajuda")}
+                >
                   Fale com professor
                 </Button>
               </div>
@@ -77,7 +84,7 @@ export const UserArea = ({ ...rest }) => {
                 <Button
                   type={1}
                   size={2}
-                  onClick={() => navigate("/certificado")}
+                  onClick={() => navigate("/nome_empresa/certificado")}
                 >
                   Certificado
                 </Button>

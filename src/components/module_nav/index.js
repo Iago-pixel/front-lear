@@ -44,7 +44,7 @@ export const ModuleNav = ({ title, classes, disabled, ...rest }) => {
               .sort((lessonA, lessonB) => lessonA.index - lessonB.index)
               .map((lesson, index) => (
                 <li key={index}>
-                  <Link to={`/${modules[0]["id"]}/${lesson.id}`}>
+                  <Link to={`nome_empresa/${modules[0]["id"]}/${lesson.id}`}>
                     {lesson.index}. {lesson.name}
                   </Link>
                 </li>

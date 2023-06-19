@@ -8,11 +8,15 @@ import { useNavigate, Link } from "react-router-dom";
 import { Container, MainText, Login } from "./style";
 import { containerVariants, itemVariants } from "../../styles/global";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+import { theme } from "../../styles/global";
 
 // components
 import { TextInput } from "../../components/text_input";
 import { Button } from "../../components/button";
 import { Header } from "../../components/header";
+import { EditButton } from "../../components/edit_button";
 
 // images
 import logo from "../../imgs/logo.svg";
@@ -27,6 +31,8 @@ import axios from "axios";
 
 export const PagLogin = ({ ...rest }) => {
   const [user, setUser] = useState([]);
+  const [mainColor, setMainColor] = useState(theme.main.colorFont);
+  const [mainBackground, setMainBackground] = useState(theme.main.background);
 
   const navigate = useNavigate();
 
@@ -52,7 +58,7 @@ export const PagLogin = ({ ...rest }) => {
 
   const onSubmitFunction = (data) => {
     console.log(data);
-    navigate("/dashboard");
+    navigate("/nome_empresa/dashboard");
   };
 
   const login = useGoogleLogin({
@@ -85,7 +91,7 @@ export const PagLogin = ({ ...rest }) => {
         )
         .then((res) => {
           console.log(res.data);
-          navigate("/dashboard");
+          navigate("/nome_empresa/dashboard");
         })
         .catch((err) => console.log(err));
     }
@@ -99,27 +105,32 @@ export const PagLogin = ({ ...rest }) => {
       transition={{ duration: 1 }}
       {...rest}
     >
-      <Container>
+      <Container mainBackground={mainBackground}>
         <Header>
-          <Link to="/">
+          <Link to="/nome_empresa">
             <img src={logo} alt="" />
           </Link>
         </Header>
         <main>
-          <MainText>
+          <MainText mainColor={mainColor}>
             <div className="login-main-text">
               <h1>Lear, plataforma de ensino de tecnologia</h1>
               <p>Aprenda programação do seu jeito, no seu tempo.</p>
             </div>
             <p className="skill-labs-company">Skill labs company</p>
           </MainText>
-          <Login>
+          <Login mainColor={mainColor}>
             <motion.div
               variants={containerVariants}
               initial="hidden"
               animate="visible"
             >
-              <motion.h1 variants={itemVariants}>Sua conta</motion.h1>
+              <div className="top-form">
+                <motion.h1 variants={itemVariants}>Sua conta</motion.h1>
+                <Link to="/nome_empresa/dashboard" className="easy-login">
+                  Logar <FontAwesomeIcon icon={faAnglesRight} />
+                </Link>
+              </div>
               <form onSubmit={handleSubmit(onSubmitFunction)}>
                 <TextInput
                   placeholder="Email"
@@ -160,6 +171,12 @@ export const PagLogin = ({ ...rest }) => {
             </motion.div>
           </Login>
         </main>
+        <EditButton
+          mainColor={mainColor}
+          setMainColor={setMainColor}
+          mainBackground={mainBackground}
+          setMainBackground={setMainBackground}
+        />
       </Container>
     </motion.div>
   );

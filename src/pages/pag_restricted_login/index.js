@@ -101,9 +101,7 @@ export const PagRestrictedLogin = ({ ...rest }) => {
     >
       <Container>
         <Header>
-          <Link to="/">
-            <img src={logo} alt="" />
-          </Link>
+          <img src={logo} alt="" />
         </Header>
         <main>
           <MainText>

@@ -41,19 +41,19 @@ export const PagLesson = ({ ...rest }) => {
   }, [lesson_id]);
 
   const back = () => {
-    navigate("/dashboard");
+    navigate("/nome_empresa/dashboard");
   };
 
   const backLesson = (index) => {
     if (index > 1) {
       const lessonId = searchLessonId(module_id, index - 1);
-      navigate(`/${module_id}/${lessonId}`);
+      navigate(`/nome_empresa/${module_id}/${lessonId}`);
     }
   };
 
   const nextLesson = (index) => {
     if (index < moduleLength) {
-      navigate(`/${module_id}/${index + 1}`);
+      navigate(`/nome_empresa/${module_id}/${index + 1}`);
     }
   };
 
@@ -85,7 +85,7 @@ export const PagLesson = ({ ...rest }) => {
               {currentLesson.introduction}
             </motion.p>
             <Link
-              to={`/${module_id}/${lesson_id}/conteudo`}
+              to={`/nome_empresa/${module_id}/${lesson_id}/conteudo`}
               className="lesson__material-link"
             >
               <motion.span variants={itemVariants}>

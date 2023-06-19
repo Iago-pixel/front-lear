@@ -24,7 +24,7 @@ export const CourseNav = ({ classes, setInitial, setAnimate, ...rest }) => {
     setAnimate("hidden");
     const newLessonId = searchLessonId(module_id, index);
     setTimeout(() => {
-      navigate(`/${module_id}/${newLessonId}`);
+      navigate(`/nome_empresa/${module_id}/${newLessonId}`);
       setInitial("hidden");
       setAnimate("visible");
     }, 500);
