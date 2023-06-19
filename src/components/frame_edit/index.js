@@ -12,7 +12,7 @@ export const FrameEdit = ({ ...rest }) => {
       </div>
       <div>
         <h1>Certificado</h1>
-        <p>Seu certificado será emitido no final do curso</p>
+        <p className="text">Seu certificado será emitido no final do curso</p>
       </div>
     </Container>
   );

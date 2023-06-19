@@ -16,7 +16,7 @@ export const Container = styled.div`
     color: ${({ color }) => color};
     margin: 2rem 0;
   }
-  p {
+  .text {
     color: ${({ color }) => color};
   }
   img {
