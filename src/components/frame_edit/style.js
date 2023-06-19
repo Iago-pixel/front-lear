@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { theme } from "../../styles/global";
 
 export const Container = styled.div`
   border: 3px solid #74e4e5;

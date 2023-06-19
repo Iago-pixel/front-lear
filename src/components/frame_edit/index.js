@@ -7,7 +7,7 @@ export const FrameEdit = ({ ...rest }) => {
   return (
     <Container {...rest}>
       <div className="header">
-        <img src={logo} alt="" />
+        <span>LOGO</span>
         <FontAwesomeIcon icon={faCircleUser} />
       </div>
       <div>
