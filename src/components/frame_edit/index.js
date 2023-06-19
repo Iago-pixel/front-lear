@@ -1,18 +1,19 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
 import logo from "../../imgs/logo.svg";
+import { Container } from "./style";
 
 export const FrameEdit = ({ ...rest }) => {
   return (
-    <div {...rest}>
-      <header>
+    <Container {...rest}>
+      <div className="header">
         <img src={logo} alt="" />
         <FontAwesomeIcon icon={faCircleUser} />
-      </header>
-      <main>
+      </div>
+      <div>
         <h1>Certificado</h1>
         <p>Seu certificado será emitido no final do curso</p>
-      </main>
-    </div>
+      </div>
+    </Container>
   );
 };
