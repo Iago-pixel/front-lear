@@ -18,10 +18,9 @@ export const Container = styled.div`
     margin: 2rem 0;
   }
   p {
-    color ${({ color }) => color};
+    color: ${({ color }) => color};
   }
   img {
     width: 4rem;
   }
-  
 `;
