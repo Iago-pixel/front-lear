@@ -12,8 +12,6 @@ import { Profile } from "../pages/profile";
 import { PagPerformance } from "../pages/pag_performance";
 import { PagCertificate } from "../pages/pag_certificate";
 import { PagSuport } from "../pages/pag_suport";
-import { PagRestrictedLogin } from "../pages/pag_restricted_login";
-import { CompanyDashboard } from "../pages/company_dashboard";
 
 // style
 import { AnimatePresence } from "framer-motion";
@@ -25,25 +23,20 @@ export const Router = () => {
   return (
     <AnimatePresence>
       <Routes>
-        <Route path="/nome_empresa" element={<PagLogin />} />
-        <Route path="/nome_empresa/dashboard" element={<Dashboard />} />
-        <Route path="/nome_empresa/linkedin" element={<LinkedInCallback />} />
-        <Route path="/nome_empresa/cadastro" element={<PagRegister />} />
+        <Route path="/" element={<PagLogin />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/linkedin" element={<LinkedInCallback />} />
+        <Route path="/cadastro" element={<PagRegister />} />
+        <Route path="/:module_id/:lesson_id" element={<PagLesson />} />
         <Route
-          path="/nome_empresa/:module_id/:lesson_id"
-          element={<PagLesson />}
-        />
-        <Route
-          path="/nome_empresa/:module_id/:lesson_id/conteudo"
+          path="/:module_id/:lesson_id/conteudo"
           element={<PagLessonContent />}
         />
-        <Route path="/nome_empresa/area_do_usuario" element={<UserArea />} />
-        <Route path="/nome_empresa/perfil" element={<Profile />} />
-        <Route path="/nome_empresa/desempenho" element={<PagPerformance />} />
-        <Route path="/nome_empresa/certificado" element={<PagCertificate />} />
-        <Route path="/nome_empresa/ajuda" element={<PagSuport />} />
-        <Route path="/" element={<PagRestrictedLogin />} />
-        <Route path="/dashboard_empresa" element={<CompanyDashboard />} />
+        <Route path="/area_do_usuario" element={<UserArea />} />
+        <Route path="/perfil" element={<Profile />} />
+        <Route path="/desempenho" element={<PagPerformance />} />
+        <Route path="/certificado" element={<PagCertificate />} />
+        <Route path="/ajuda" element={<PagSuport />} />
       </Routes>
     </AnimatePresence>
   );

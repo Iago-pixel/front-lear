@@ -27,14 +27,14 @@ export const UserArea = ({ ...rest }) => {
     >
       <Container {...rest}>
         <Header hasExit>
-          <Link to="/">
+          <Link to="/dashboard">
             <img src={logo} alt="" />
           </Link>
         </Header>
         <main>
           <div className="main__header">
             <h1>Area do aluno</h1>
-            <Button onClick={() => navigate("/nome_empresa/dashboard")}>
+            <Button onClick={() => navigate("/dashboard")}>
               Assistir aula
             </Button>
           </div>
@@ -45,10 +45,7 @@ export const UserArea = ({ ...rest }) => {
           >
             <div className="main__nav">
               <div className="main__nav__button-box">
-                <Button
-                  size={2}
-                  onClick={() => navigate("/nome_empresa/perfil")}
-                >
+                <Button size={2} onClick={() => navigate("/perfil")}>
                   Minha conta
                 </Button>
               </div>
@@ -61,17 +58,13 @@ export const UserArea = ({ ...rest }) => {
                 <Button
                   type={1}
                   size={2}
-                  onClick={() => navigate("/nome_empresa/desempenho")}
+                  onClick={() => navigate("/desempenho")}
                 >
                   Desempenho
                 </Button>
               </div>
               <div className="main__nav__button-box">
-                <Button
-                  type={1}
-                  size={2}
-                  onClick={() => navigate("/nome_empresa/ajuda")}
-                >
+                <Button type={1} size={2} onClick={() => navigate("/ajuda")}>
                   Fale com professor
                 </Button>
               </div>
@@ -84,7 +77,7 @@ export const UserArea = ({ ...rest }) => {
                 <Button
                   type={1}
                   size={2}
-                  onClick={() => navigate("/nome_empresa/certificado")}
+                  onClick={() => navigate("/certificado")}
                 >
                   Certificado
                 </Button>

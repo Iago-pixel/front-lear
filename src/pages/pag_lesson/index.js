@@ -28,6 +28,7 @@ export const PagLesson = ({ ...rest }) => {
   const [currentLesson, setCurrentLesson] = useState(
     classes.filter((lesson) => lesson.id == lesson_id)[0]
   );
+  console.log(classes.filter((lesson) => lesson.id == lesson_id)[0]);
 
   const [moduleLength] = useState(
     classes.filter((lesson) => lesson.module_id == module_id).length
@@ -41,19 +42,19 @@ export const PagLesson = ({ ...rest }) => {
   }, [lesson_id]);
 
   const back = () => {
-    navigate("/nome_empresa/dashboard");
+    navigate("/dashboard");
   };
 
   const backLesson = (index) => {
     if (index > 1) {
       const lessonId = searchLessonId(module_id, index - 1);
-      navigate(`/nome_empresa/${module_id}/${lessonId}`);
+      navigate(`/${module_id}/${lessonId}`);
     }
   };
 
   const nextLesson = (index) => {
     if (index < moduleLength) {
-      navigate(`/nome_empresa/${module_id}/${index + 1}`);
+      navigate(`/${module_id}/${index + 1}`);
     }
   };
 
@@ -85,7 +86,7 @@ export const PagLesson = ({ ...rest }) => {
               {currentLesson.introduction}
             </motion.p>
             <Link
-              to={`/nome_empresa/${module_id}/${lesson_id}/conteudo`}
+              to={`/${module_id}/${lesson_id}/conteudo`}
               className="lesson__material-link"
             >
               <motion.span variants={itemVariants}>

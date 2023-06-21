@@ -4,10 +4,7 @@ import { Container } from "./style";
 
 export const BackButton = ({ companyAccess, ...rest }) => {
   return (
-    <Container
-      to={companyAccess ? "/dashboard" : "/nome_empresa/area_do_usuario"}
-      {...rest}
-    >
+    <Container to="/area_do_usuario" {...rest}>
       <FontAwesomeIcon icon={faArrowLeft} />
     </Container>
   );

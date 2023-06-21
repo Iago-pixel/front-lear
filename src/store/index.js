@@ -6,11 +6,7 @@ import {
 
 import ReduxThunk from "redux-thunk";
 
-import { themeMockReducer } from "./modules/theme_mock/reducer";
-
-const reducers = combineReducers({
-  themeMock: themeMockReducer,
-});
+const reducers = combineReducers({});
 
 const store = createStore(reducers, applyMiddleware(ReduxThunk));
 

@@ -12,7 +12,7 @@ const moveRight = keyframes`
 `;
 
 export const Container = styled.div`
-  background-color: ${({ mainBackground }) => mainBackground};
+  background-color: ${theme.main.background};
   min-height: 100vh;
   main {
     display: flex;
@@ -27,17 +27,17 @@ export const MainText = styled.section`
   .login-main-text {
     width: 30rem;
     h1 {
-      color: ${({ mainColor }) => mainColor};
+      color: ${theme.main.colorFont};
       font-size: 3rem;
       margin-bottom: 0;
     }
     p {
-      color: ${({ mainColor }) => mainColor};
+      color: ${theme.main.colorFont};
       font-size: 1.5rem;
     }
   }
   .skill-labs-company {
-    color: ${({ mainColor }) => mainColor};
+    color: ${theme.main.colorFont};
     font-weight: bold;
     margin-top: 4rem;
   }
@@ -45,7 +45,7 @@ export const MainText = styled.section`
 
 export const Login = styled.section`
   h1 {
-    color: ${({ mainColor }) => mainColor};
+    color: ${theme.main.colorFont};
     font-size: 2rem;
     margin: 0 0 1.5rem;
     padding-left: 1rem;
@@ -53,18 +53,13 @@ export const Login = styled.section`
   a:hover {
     text-decoration: underline;
   }
-  .top-form {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
   form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     a {
-      color: ${({ mainColor }) => mainColor};
+      color: ${theme.main.colorFont};
       margin: 0 0 1rem;
       font-size: 1.1rem;
     }
@@ -84,14 +79,10 @@ export const Login = styled.section`
     align-items: center;
   }
   .toRegister__question {
-    color: ${({ mainColor }) => mainColor};
+    color: ${theme.main.colorFont};
     margin: 0;
   }
-  .toRegister__link,
-  .easy-login {
+  .toRegister__link {
     color: ${theme.link.colorFont};
-  }
-  .easy-login {
-    margin: 0 0 1rem;
   }
 `;
