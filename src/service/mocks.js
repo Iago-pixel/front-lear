@@ -2,6 +2,9 @@ import { theme } from "../styles/global";
 import cake_mobile from "../imgs/cake_mobile.png";
 import cake_solution from "../imgs/cake_solution.jpg";
 import cake_partial_solution from "../imgs/cake_partial_solution.jpg";
+import divisao_7_por_3 from "../imgs/divisao_7_por_3.png";
+import demonstracao_divisao from "../imgs/demonstracao_divisao.png";
+import divisao_8_por_2 from "../imgs/divisao_8_por_2.png";
 import { Imagem } from "../components/imagem";
 
 export const users = [
@@ -149,6 +152,15 @@ export const classes = [
     video: "https://youtu.be/upvL8w5-2ZU",
     introduction:
       "Jogos podem criar ambientes desafiadores aonde temos que resolver problemas, tomar decisões rápidas com informações limitadas, identificar padrões, criar estratégias, fazer avaliações lógicas...",
+    module_id: "1",
+  },
+  {
+    id: "7",
+    index: 7,
+    name: "Exercitando alguns conceitos da matemática",
+    video: "https://youtu.be/YJwDzjvCw6g",
+    introduction:
+      "média aritmética, progressão aritmética e geométrica, fatorial, fibonacci, resto da divisão",
     module_id: "1",
   },
 ];
@@ -1029,5 +1041,190 @@ export const lessonArticles = [
       );
     },
     lesson_id: "6",
+  },
+  {
+    id: "17",
+    title: "Média aritmética",
+    Content: () => {
+      return (
+        <>
+          <p>
+            Média aritmética é a média de um conjunto de valores. Pode ser
+            calculada pela seguinte formula:
+          </p>
+          <p>Média = (valor1 + valor2 + valor3 + ... + valorN)/N</p>
+          <p>
+            Aonde “Média” é a média, “valor1”, “valor2”, “valor3” e “valorN” são
+            valores do conjunto de valores e “N” é o número de valores.
+          </p>
+        </>
+      );
+    },
+    lesson_id: "7",
+  },
+  {
+    id: "18",
+    title: "Atividade",
+    Content: () => {
+      return (
+        <>
+          <p>Qual a média aritmética dos valores "3, 12, 23, 15, 2"?</p>
+        </>
+      );
+    },
+    lesson_id: "7",
+  },
+  {
+    id: "19",
+    title: "Progressão aritmética e geométrica",
+    Content: () => {
+      return (
+        <>
+          <p>
+            Progressão aritmética é uma progressão numérica aonde a diferença
+            entre cada termo é sempre a mesma. Por exemplo: 5, 10, 15, 20, 25,
+            30. É uma progressão que sobe de 5 em 5.
+          </p>
+          <p>
+            Já na progressão geométrica o termo seguinte sempre é resultado do
+            anterior multiplicado por um valor constante (com exceção do
+            primeiro). Por exemplo: 2, 4, 8, 16, 32, 64. É uma progressão aonde
+            o valor seguinte é sempre o dobro do anterior.
+          </p>
+        </>
+      );
+    },
+    lesson_id: "7",
+  },
+  {
+    id: "20",
+    title: "Atividade",
+    Content: () => {
+      return (
+        <>
+          <ol>
+            <li>Determine o vigésimo elemento da sequência 2, 7, 12, 17...</li>
+            <li>Determine o oitavo elemento da sequência 2, 6, 18, 54....</li>
+          </ol>
+        </>
+      );
+    },
+    lesson_id: "7",
+  },
+  {
+    id: "21",
+    title: "Fatorial",
+    Content: () => {
+      return (
+        <>
+          <p>
+            O fatorial de um número inteiro positivo é a multiplicação deste por
+            todos os seus antecessores até 1 e é denotado pelo símbolo de
+            exclamação (!). Por exemplo:
+          </p>
+          <p>5! = 5x4x3x2x1 = 120</p>
+        </>
+      );
+    },
+    lesson_id: "7",
+  },
+  {
+    id: "22",
+    title: "Atividade",
+    Content: () => {
+      return (
+        <>
+          <p>Qual o fatorial de 6?</p>
+        </>
+      );
+    },
+    lesson_id: "7",
+  },
+  {
+    id: "23",
+    title: "Fibonacci",
+    Content: () => {
+      return (
+        <>
+          <p>
+            Fibonacci é uma sequência numérica criada pelo matemático italiano
+            Leonardo Fibonacci. A sequência começa com os números 0 e 1 e cada
+            número seguinte é igual à soma dos dois anteriores. A sequência
+            então fica 0, 1, 1, 2, 3, 5, 8, 13...
+          </p>
+        </>
+      );
+    },
+    lesson_id: "7",
+  },
+  {
+    id: "24",
+    title: "Atividade",
+    Content: () => {
+      return (
+        <>
+          <p>Qual o vigésimo termo da sequência Fibonacci?</p>
+        </>
+      );
+    },
+    lesson_id: "7",
+  },
+  {
+    id: "25",
+    title: "Resto de divisão",
+    Content: () => {
+      return (
+        <>
+          <p>Você deve lembrar desse método de divisão...</p>
+          <Imagem
+            src={divisao_7_por_3}
+            alt="divisão de 7 por 3"
+            width="348px"
+            height="306px"
+          />
+          <p>
+            Nessa divisão nós dividimos 7 por 3, porém essa divisão não dá um
+            número inteiro então nós retiramos o “resto” do número para torna-lo
+            divisível por 3. Tiramos 1 de 7, ficando com 6. 6 dividido por 3 é
+            igual a 2 e “sobra” 1. O valor do resto sempre será menor que a do
+            divisor (no caso, o 3).
+          </p>
+          <Imagem
+            src={demonstracao_divisao}
+            alt="demonstração dos elementos da divisão"
+            width="536px"
+            height="352px"
+          />
+          <p>
+            Logo um número dividido por 3 tem resto 0, 1 ou 2, necessariamente.
+          </p>
+          <p>
+            Além disso podemos afirmar que se o resto for zero é porque o
+            dividendo é divisível pelo divisor.
+          </p>
+          <Imagem
+            src={divisao_8_por_2}
+            alt="divisão de 8 por 2"
+            width="333px"
+            height="246px"
+          />
+          <p>O resto é 0, logo podemos afirmar que 8 é divisível por 2.</p>
+        </>
+      );
+    },
+    lesson_id: "7",
+  },
+  {
+    id: "26",
+    title: "Atividade",
+    Content: () => {
+      return (
+        <>
+          <p>Qual o resto de um número ímpar dividido por dois?</p>
+          <p className="red">Respostas na próxima aula</p>
+        </>
+      );
+    },
+    lesson_id: "7",
   },
 ];
