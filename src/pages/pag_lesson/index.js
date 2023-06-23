@@ -28,7 +28,6 @@ export const PagLesson = ({ ...rest }) => {
   const [currentLesson, setCurrentLesson] = useState(
     classes.filter((lesson) => lesson.id == lesson_id)[0]
   );
-  console.log(classes.filter((lesson) => lesson.id == lesson_id)[0]);
 
   const [moduleLength] = useState(
     classes.filter((lesson) => lesson.module_id == module_id).length
