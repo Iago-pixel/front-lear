@@ -1,11 +1,15 @@
-import { theme } from "../styles/global";
+// components
+import { Imagem } from "../components/imagem";
+import { Button } from "../components/button";
 import cake_mobile from "../imgs/cake_mobile.png";
 import cake_solution from "../imgs/cake_solution.jpg";
 import cake_partial_solution from "../imgs/cake_partial_solution.jpg";
 import divisao_7_por_3 from "../imgs/divisao_7_por_3.png";
 import demonstracao_divisao from "../imgs/demonstracao_divisao.png";
 import divisao_8_por_2 from "../imgs/divisao_8_por_2.png";
-import { Imagem } from "../components/imagem";
+
+// style
+import { theme } from "../styles/global";
 
 export const users = [
   {
@@ -161,6 +165,22 @@ export const classes = [
     video: "https://youtu.be/YJwDzjvCw6g",
     introduction:
       "média aritmética, progressão aritmética e geométrica, fatorial, fibonacci, resto da divisão",
+    module_id: "1",
+  },
+  {
+    id: "8",
+    index: 8,
+    name: "Exercícios",
+    video: "https://youtu.be/Ne5XO2LwxmE",
+    introduction: "Avaliação para testar como estão indo...",
+    module_id: "1",
+  },
+  {
+    id: "9",
+    index: 9,
+    name: "Prova de Lógica I",
+    video: "https://youtu.be/Ne5XO2LwxmE",
+    introduction: "Avaliação para testar como estão indo...",
     module_id: "1",
   },
 ];
@@ -1226,5 +1246,107 @@ export const lessonArticles = [
       );
     },
     lesson_id: "7",
+  },
+  {
+    id: "27",
+    title: "Gabarito do exercício anterior",
+    Content: () => {
+      return (
+        <>
+          <p>Qual a média aritmética dos valores "3, 12, 23, 15, 2"?</p>
+          <p>
+            <span className="lightblue">3 + 12 + 23 + 15 + 2 = 55</span>
+          </p>
+          <p>
+            <span className="lightblue">
+              55/5 = <span className="bold">11</span>
+            </span>
+          </p>
+          <p>Determine o vigésimo elemento da sequência 2, 7, 12, 17...</p>
+          <p>
+            <span className="lightblue">
+              2, 7, 12, 17, 22, 27, 32, 37, 42, 47, 52, 57, 62, 67, 72, 77, 82,
+              87, 92, <span className="bold">97</span>
+            </span>
+          </p>
+          <p>Determine o oitavo elemento da sequência 2, 6, 18, 54....</p>
+          <p>
+            <span className="lightblue">
+              2, 6, 18, 54, 162, 486, 1458, <span className="bold">4374</span>
+            </span>
+          </p>
+          <p>Qual o fatorial de 6?</p>
+          <p>
+            <span className="lightblue">
+              6x5x4x3x2x1 = <span className="bold">720</span>
+            </span>
+          </p>
+          <p>Qual o vigésimo termo da sequência Fibonacci?</p>
+          <p>
+            <span className="lightblue">
+              0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987,
+              1597, 2584, <span className="bold">4181</span>
+            </span>
+          </p>
+          <p>Qual o resto de um número ímpar dividido por dois?</p>
+          <p>
+            <span className="lightblue bold">1</span>
+          </p>
+        </>
+      );
+    },
+    lesson_id: "8",
+  },
+  {
+    id: "28",
+    title: "Subindo de nível",
+    Content: () => {
+      return (
+        <>
+          <p>
+            Parabéns por chegar até aqui. Muitos desses assuntos você verá
+            novamente no curso de JavaScript, então são muito importantes. Agora
+            iremos para uma sequencia de exercícios mais difíceis para você
+            chegar na matéria de programação com a mente afiada para os desafios
+            da programação! Vamos lá!
+          </p>
+        </>
+      );
+    },
+    lesson_id: "8",
+  },
+  {
+    id: "29",
+    title: "Atividade",
+    Content: () => {
+      return (
+        <>
+          <p>Tente resolver essa lista de exercícios de lógica</p>
+          <a
+            href="https://www.todamateria.com.br/raciocinio-logico-exercicios/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Exercícios de raciocínio lógico
+          </a>
+        </>
+      );
+    },
+    lesson_id: "8",
+  },
+  {
+    id: "30",
+    title: "Prova de Lógica I",
+    Content: () => {
+      return (
+        <>
+          <p>Aguarde a liberação da prova...</p>
+          <Button type={0} size={1} disabled>
+            Fazer prova
+          </Button>
+        </>
+      );
+    },
+    lesson_id: "9",
   },
 ];
