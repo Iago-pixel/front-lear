@@ -1,5 +1,5 @@
 // react
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 // router dom
 import { useNavigate, useParams } from "react-router-dom";
@@ -41,7 +41,7 @@ export const CourseNav = ({ classes, setInitial, setAnimate, ...rest }) => {
               .map((lesson, index) => (
                 <ItemContainer
                   key={index}
-                  selected={internalSelect === lesson.index}
+                  selected={internalSelect == lesson.index}
                 >
                   <motion.button
                     onClick={() => selector(lesson.index)}

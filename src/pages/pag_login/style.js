@@ -12,17 +12,17 @@ const moveRight = keyframes`
 `;
 
 export const Container = styled.div`
-
-    main {
-        min-height: 90vh;
-        display: flex;
-        padding: 0rem 4rem 0rem 4rem;
-        justify-content: space-between;
-        align-items: center;
-     
-    }
+  background-color: ${theme.main.background};
+  min-height: 100vh;
+  main {
+    min-height: 90vh;
+    display: flex;
+    padding: 0rem 4rem 0 4rem;
+    justify-content: space-between;
+    align-items: center;
+  }
 `;
- 
+
 export const MainText = styled.section`
   flex: 2 1 0%;
 

@@ -28,8 +28,8 @@ export const PagSuport = ({ ...rest }) => {
     resolver: yupResolver(formSchema),
   });
 
-  const onSubmitFunction = (data) => {
-    console.log(data);
+  const onSubmitFunction = ({ question, description }) => {
+    console.log({ question, description });
   };
 
   return (

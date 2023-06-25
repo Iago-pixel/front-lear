@@ -27,7 +27,7 @@ export const UserArea = ({ ...rest }) => {
     >
       <Container {...rest}>
         <Header hasExit>
-          <Link to="/">
+          <Link to="/dashboard">
             <img src={logo} alt="" />
           </Link>
         </Header>
@@ -50,7 +50,7 @@ export const UserArea = ({ ...rest }) => {
                 </Button>
               </div>
               <div className="main__nav__button-box">
-                <Button type={1} size={2}>
+                <Button type={1} size={2} disabled>
                   Calendario de aulas
                 </Button>
               </div>

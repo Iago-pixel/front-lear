@@ -8,6 +8,9 @@ import { useNavigate, Link } from "react-router-dom";
 import { Container, MainText, Login} from "./style";
 import { containerVariants, itemVariants } from "../../styles/global";
 import { motion } from "framer-motion";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
+import { theme } from "../../styles/global";
 
 
 // components

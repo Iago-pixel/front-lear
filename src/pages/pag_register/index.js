@@ -74,7 +74,7 @@ export const PagRegister = ({ ...rest }) => {
     >
       <Container>
         <Header>
-          <Link to="/">
+          <Link to="/nome_empresa">
             <img src={logo} alt="" />
           </Link>
         </Header>

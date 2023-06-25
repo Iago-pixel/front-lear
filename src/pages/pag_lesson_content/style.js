@@ -48,4 +48,10 @@ export const Container = styled.div`
   .red {
     color: red;
   }
+  .lightblue {
+    color: lightblue;
+  }
+  .bold {
+    font-weight: bold;
+  }
 `;

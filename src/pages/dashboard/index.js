@@ -26,7 +26,7 @@ export const Dashboard = ({ ...rest }) => {
       {...rest}
     >
       <Header hasPerfil>
-        <Link to="/">
+        <Link to="/area_do_usuario">
           <img src={logo} alt="" />
         </Link>
       </Header>
