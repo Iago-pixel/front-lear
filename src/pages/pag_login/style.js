@@ -52,7 +52,7 @@ export const Login = styled.section`
   flex: 1 1 0%;
   display: flex;
   justify-content: flex-end;
-  div{
+   div{
     width: 100%;
     max-width: 20rem;
  

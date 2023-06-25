@@ -31,7 +31,7 @@ import axios from "axios";
 
 //responsibility
 import {mediaQueries} from "./media";
-const MediaContainer = mediaQueries(Container, Login)
+const MediaContainer = mediaQueries(Container, MainText, Login)
 
 export const PagLogin = ({ ...rest }) => {
   const [user, setUser] = useState([]);
