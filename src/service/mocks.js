@@ -172,7 +172,7 @@ export const classes = [
     index: 8,
     name: "Exercícios",
     video: "https://youtu.be/Ne5XO2LwxmE",
-    introduction: "Avaliação para testar como estão indo...",
+    introduction: "Preparece para a avaliação!",
     module_id: "1",
   },
   {
