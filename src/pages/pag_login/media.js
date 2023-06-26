@@ -9,6 +9,7 @@ const moveDown = keyframes`
     transform: translateY(0)
   }
 `;
+
 export const mediaQueries = (container, maintext, login) =>{
     const mediaContainer = styled.div`
        ${container}{
