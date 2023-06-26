@@ -4,7 +4,7 @@ import { theme } from "../../styles/global";
 export const Container = styled.header`
   background-color: transparent;
   padding: 0 2rem;
-  height: 5rem;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;

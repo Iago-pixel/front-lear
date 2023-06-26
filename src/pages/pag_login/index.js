@@ -5,12 +5,13 @@ import { useState, useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 
 // style
-import { Container, MainText, Login } from "./style";
+import { Container, MainText, Login} from "./style";
 import { containerVariants, itemVariants } from "../../styles/global";
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAnglesRight } from "@fortawesome/free-solid-svg-icons";
 import { theme } from "../../styles/global";
+
 
 // components
 import { TextInput } from "../../components/text_input";
@@ -27,6 +28,10 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useGoogleLogin } from "@react-oauth/google";
 import { useLinkedIn } from "react-linkedin-login-oauth2";
 import axios from "axios";
+
+//responsibility
+import {mediaQueries} from "./media";
+const MediaContainer = mediaQueries(Container, MainText, Login)
 
 export const PagLogin = ({ ...rest }) => {
   const [user, setUser] = useState([]);
@@ -94,6 +99,7 @@ export const PagLogin = ({ ...rest }) => {
     }
   }, [user, navigate]);
 
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -101,7 +107,7 @@ export const PagLogin = ({ ...rest }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
       {...rest}
-    >
+    ><MediaContainer>
       <Container>
         <Header>
           <Link to="/">
@@ -164,6 +170,7 @@ export const PagLogin = ({ ...rest }) => {
           </Login>
         </main>
       </Container>
+      </MediaContainer>
     </motion.div>
   );
 };
