@@ -16,11 +16,13 @@ export const Container = styled.div`
   background-image: url(${rectangle});
   background-repeat: no-repeat;
   background-position: right top;
-  padding-bottom: 1rem;
+  background-size: contain;
   main {
     display: flex;
     justify-content: space-between;
     padding: 0 6rem 0;
+    height: 90vh;
+    box-sizing: border-box;
   }
   h1 {
     color: ${theme.main.colorFont};
@@ -40,6 +42,9 @@ export const Container = styled.div`
       color: ${theme.main.colorFont};
       margin: 0 0 1rem;
       font-size: 1.1rem;
+    }
+    input[type="text"]{
+        height: 2.5rem;
     }
   }
   button {

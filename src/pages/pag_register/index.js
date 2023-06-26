@@ -13,6 +13,7 @@ import { Container } from "./style";
 import { containerVariants, itemVariants } from "../../styles/global";
 import { motion } from "framer-motion";
 
+
 // images
 import logo from "../../imgs/logo.svg";
 
@@ -20,6 +21,9 @@ import logo from "../../imgs/logo.svg";
 import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+
+import {mediaQueries} from "./media";
+const MediaContainer = mediaQueries(Container)
 
 export const PagRegister = ({ ...rest }) => {
   const options = [{ name: "Curso frontend", value: "curso_frontend" }];
@@ -71,7 +75,7 @@ export const PagRegister = ({ ...rest }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
       {...rest}
-    >
+    ><MediaContainer>
       <Container>
         <Header>
           <Link to="/nome_empresa">
@@ -79,7 +83,7 @@ export const PagRegister = ({ ...rest }) => {
           </Link>
         </Header>
         <main>
-          <section>
+          <section class="form-container">
             <motion.div
               variants={containerVariants}
               initial="hidden"
@@ -148,6 +152,7 @@ export const PagRegister = ({ ...rest }) => {
           </section>
         </main>
       </Container>
+      </MediaContainer>
     </motion.div>
   );
 };
