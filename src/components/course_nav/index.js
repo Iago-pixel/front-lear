@@ -1,33 +1,21 @@
-// react
-import { useEffect, useState } from "react";
-
-// router dom
-import { useNavigate, useParams } from "react-router-dom";
+// react redux
+import { useSelector, useDispatch } from "react-redux";
+import { updateIndex } from "../../store/modules/current_lesson/actions";
 
 // style
 import { Container, ItemContainer } from "./style";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "../../styles/global";
 
-// utils
-import { searchLessonId } from "../../service/util";
+// mock
+import { classes } from "../../service/mocks";
 
-export const CourseNav = ({ classes, setInitial, setAnimate, ...rest }) => {
-  let { module_id, lesson_id } = useParams();
-  const [internalSelect, setInternalSelect] = useState(lesson_id);
+export const CourseNav = ({ ...rest }) => {
+  const currentLessonindex = useSelector((state) => state.currentLesson);
+  const dispatch = useDispatch();
 
-  const navigate = useNavigate();
-
-  const selector = (index) => {
-    setInternalSelect(index);
-    setInitial("visible");
-    setAnimate("hidden");
-    const newLessonId = searchLessonId(module_id, index);
-    setTimeout(() => {
-      navigate(`/${module_id}/${newLessonId}`);
-      setInitial("hidden");
-      setAnimate("visible");
-    }, 500);
+  const selector = (buttonIndex) => {
+    dispatch(updateIndex(buttonIndex));
   };
 
   return (
@@ -41,7 +29,7 @@ export const CourseNav = ({ classes, setInitial, setAnimate, ...rest }) => {
               .map((lesson, index) => (
                 <ItemContainer
                   key={index}
-                  selected={internalSelect == lesson.index}
+                  selected={currentLessonindex == lesson.index}
                 >
                   <motion.button
                     onClick={() => selector(lesson.index)}
