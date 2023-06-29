@@ -25,6 +25,10 @@ import { searchLessonId } from "../../service/util";
 // mocks
 import { classes } from "../../service/mocks";
 
+//responsibility
+import { mediaQueries } from "./media";
+const MediaContainer = mediaQueries(Container);
+
 export const PagLesson = ({ ...rest }) => {
   const dispatch = useDispatch();
   const index = useSelector((state) => state.currentLesson);
@@ -83,51 +87,55 @@ export const PagLesson = ({ ...rest }) => {
       transition={{ duration: 1 }}
       {...rest}
     >
-      <Container>
-        <Header hasPerfil>
-          <Button type={2} onClick={() => back()}>
-            Voltar
-          </Button>
-        </Header>
-        <motion.main
-          variants={containerVariants}
-          initial={initial}
-          animate={animate}
-        >
-          <section className="lesson">
-            <motion.h1 variants={itemVariants}>{currentLesson.name}</motion.h1>
-            <Video height="360" width="640" url={currentLesson.video} />
-            <motion.p className="lesson__intro" variants={itemVariants}>
-              {currentLesson.introduction}
-            </motion.p>
-            <Link
-              to={`/${module_id}/${lesson_id}/conteudo`}
-              className="lesson__material-link"
-            >
-              <motion.span variants={itemVariants}>
-                Material de suporte
-              </motion.span>
-            </Link>
-            <div className="lesson__move">
-              <Button onClick={() => backLesson()} disabled={index === 1}>
-                Anterior
-              </Button>
-              <Button
-                onClick={() => nextLesson()}
-                disabled={index === moduleLength}
+      <MediaContainer>
+        <Container>
+          <Header hasPerfil>
+            <Button type={2} onClick={() => back()}>
+              Voltar
+            </Button>
+          </Header>
+          <motion.main
+            variants={containerVariants}
+            initial={initial}
+            animate={animate}
+          >
+            <section className="lesson">
+              <motion.h1 variants={itemVariants}>
+                {currentLesson.name}
+              </motion.h1>
+              <Video height="360" width="640" url={currentLesson.video} />
+              <motion.p className="lesson__intro" variants={itemVariants}>
+                {currentLesson.introduction}
+              </motion.p>
+              <Link
+                to={`/${module_id}/${lesson_id}/conteudo`}
+                className="lesson__material-link"
               >
-                Próxima
-              </Button>
-            </div>
-          </section>
-          <CourseNav
-            classes={classes}
-            className="pag-lesson__course-nav"
-            setInitial={setInitial}
-            setAnimate={setAnimate}
-          />
-        </motion.main>
-      </Container>
+                <motion.span variants={itemVariants}>
+                  Material de suporte
+                </motion.span>
+              </Link>
+              <div className="lesson__move">
+                <Button onClick={() => backLesson()} disabled={index === 1}>
+                  Anterior
+                </Button>
+                <Button
+                  onClick={() => nextLesson()}
+                  disabled={index === moduleLength}
+                >
+                  Próxima
+                </Button>
+              </div>
+            </section>
+            <CourseNav
+              classes={classes}
+              className="pag-lesson__course-nav"
+              setInitial={setInitial}
+              setAnimate={setAnimate}
+            />
+          </motion.main>
+        </Container>
+      </MediaContainer>
     </motion.div>
   );
 };

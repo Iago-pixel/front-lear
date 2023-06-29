@@ -105,6 +105,7 @@ export const GlobalStyle = createGlobalStyle`
       margin: 0 auto;
       max-width: 1440px;
       background-color: ${theme.main.background};
+      position: relative;
   }
 
   figure {
