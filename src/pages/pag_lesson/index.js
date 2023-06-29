@@ -4,6 +4,10 @@ import { useState, useEffect } from "react";
 // router dom
 import { useNavigate, useParams, Link } from "react-router-dom";
 
+// react-redux
+import { useSelector, useDispatch } from "react-redux";
+import { updateIndex } from "../../store/modules/current_lesson/actions";
+
 // components
 import { Header } from "../../components/header";
 import { Button } from "../../components/button";
@@ -22,6 +26,8 @@ import { searchLessonId } from "../../service/util";
 import { classes } from "../../service/mocks";
 
 export const PagLesson = ({ ...rest }) => {
+  const dispatch = useDispatch();
+  const index = useSelector((state) => state.currentLesson);
   const navigate = useNavigate();
   let { module_id, lesson_id } = useParams();
 
@@ -40,20 +46,30 @@ export const PagLesson = ({ ...rest }) => {
     setCurrentLesson(classes.filter((lesson) => lesson.id == lesson_id)[0]);
   }, [lesson_id]);
 
+  useEffect(() => {
+    setInitial("visible");
+    setAnimate("hidden");
+    const newLessonId = searchLessonId(module_id, index);
+    setTimeout(() => {
+      navigate(`/${module_id}/${newLessonId}`);
+      setInitial("hidden");
+      setAnimate("visible");
+    }, 500);
+  }, [index, module_id, navigate]);
+
   const back = () => {
     navigate("/dashboard");
   };
 
-  const backLesson = (index) => {
+  const backLesson = () => {
     if (index > 1) {
-      const lessonId = searchLessonId(module_id, index - 1);
-      navigate(`/${module_id}/${lessonId}`);
+      dispatch(updateIndex(index - 1));
     }
   };
 
-  const nextLesson = (index) => {
+  const nextLesson = () => {
     if (index < moduleLength) {
-      navigate(`/${module_id}/${index + 1}`);
+      dispatch(updateIndex(index + 1));
     }
   };
 
@@ -93,15 +109,12 @@ export const PagLesson = ({ ...rest }) => {
               </motion.span>
             </Link>
             <div className="lesson__move">
-              <Button
-                onClick={() => backLesson(currentLesson.index)}
-                disabled={currentLesson.index === 1}
-              >
+              <Button onClick={() => backLesson()} disabled={index === 1}>
                 Anterior
               </Button>
               <Button
-                onClick={() => nextLesson(currentLesson.index)}
-                disabled={currentLesson.index === moduleLength}
+                onClick={() => nextLesson()}
+                disabled={index === moduleLength}
               >
                 Próxima
               </Button>

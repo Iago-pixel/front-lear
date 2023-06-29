@@ -6,7 +6,11 @@ import {
 
 import ReduxThunk from "redux-thunk";
 
-const reducers = combineReducers({});
+import { currentLessonReducer } from "./modules/current_lesson/reducer";
+
+const reducers = combineReducers({
+  currentLesson: currentLessonReducer,
+});
 
 const store = createStore(reducers, applyMiddleware(ReduxThunk));
 

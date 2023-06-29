@@ -4,7 +4,10 @@ import { theme } from "../../styles/global";
 
 export const Container = styled.section`
   background-color: transparent;
-  width: 25rem;
+  width: 26rem;
+  max-height: 500px;
+  overflow-y: scroll;
+  overflow-x: hidden;
   h1 {
     padding-left: 1rem;
     color: ${theme.main.colorFont1};
@@ -18,8 +21,9 @@ export const Container = styled.section`
 export const ItemContainer = styled.li`
   border-radius: 7px;
   margin: 1.5rem 0;
+
   button {
-    width: 100%;
+    width: 95%;
     display: flex;
     padding: 0;
     align-items: center;
@@ -28,12 +32,12 @@ export const ItemContainer = styled.li`
     background-color: ${({ selected }) =>
       selected ? theme.button[0].background : "transparent"};
     &:hover {
-        cursor: pointer;
-        background-color: ${theme.button[0].background};
-        .name {
-            color: ${theme.button[0].colorFont};
-            font-weight: bold;
-        }
+      cursor: pointer;
+      background-color: ${theme.button[0].background};
+      .name {
+        color: ${theme.button[0].colorFont};
+        font-weight: bold;
+      }
     }
   }
   .number {
@@ -46,12 +50,15 @@ export const ItemContainer = styled.li`
     align-items: center;
     font-weight: bold;
     font-size: 1.2rem;
+    margin-right: 1.5rem;
   }
   .name {
-    padding: 0 1.5rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-size: 1.2rem;
     font-weight: ${({ selected }) => (selected ? "bold" : "normal")};
     color: ${({ selected }) =>
-      selected ? theme.button[0].colorFont : theme.main.colorFont}};
+      selected ? theme.button[0].colorFont : theme.main.colorFont};
   }
 `;

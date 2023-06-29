@@ -10,6 +10,9 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
   }
+  .lesson {
+    width: 640px;
+  }
   h1 {
     font-size: ${theme.title.fontSize};
     color: ${theme.main.colorFont};
@@ -19,9 +22,6 @@ export const Container = styled.div`
     color: ${theme.main.colorFont};
     max-width: 640px;
     word-break: break-word;
-  }
-  .lesson {
-    width: 640px;
   }
   .lesson__material-link {
     color: ${theme.link.colorFont};
@@ -36,6 +36,6 @@ export const Container = styled.div`
     margin: 1rem 0 3rem;
   }
   .pag-lesson__course-nav {
-    margin: 3rem 0;
+    margin: 3rem 0 0;
   }
 `;
