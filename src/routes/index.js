@@ -12,6 +12,8 @@ import { Profile } from "../pages/profile";
 import { PagPerformance } from "../pages/pag_performance";
 import { PagCertificate } from "../pages/pag_certificate";
 import { PagSuport } from "../pages/pag_suport";
+import { PasswordRecover } from "../pages/pag_passwordRecover"
+import { PasswordReset } from "../pages/pag_passwordReset"
 
 // style
 import { AnimatePresence } from "framer-motion";
@@ -37,6 +39,8 @@ export const Router = () => {
         <Route path="/desempenho" element={<PagPerformance />} />
         <Route path="/certificado" element={<PagCertificate />} />
         <Route path="/ajuda" element={<PagSuport />} />
+        <Route path="/redefinir_senha" element={<PasswordReset />} />
+        <Route path="/recuperar_senha" element={<PasswordRecover />} />
       </Routes>
     </AnimatePresence>
   );
