@@ -18,10 +18,19 @@ export const Container = styled.div`
     color: ${theme.main.colorFont};
     margin: 0 0 1rem;
   }
+  .lesson__nav-mobile-buttons {
+    display: none;
+    button {
+      border-radius: 0;
+    }
+  }
   .lesson__intro {
     color: ${theme.main.colorFont};
     max-width: 640px;
     word-break: break-word;
+  }
+  .video--mobile {
+    display: none;
   }
   .lesson__material-link {
     color: ${theme.link.colorFont};

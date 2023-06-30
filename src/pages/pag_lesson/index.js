@@ -13,6 +13,7 @@ import { Header } from "../../components/header";
 import { Button } from "../../components/button";
 import { Video } from "../../components/video";
 import { CourseNav } from "../../components/course_nav";
+import { LessonNavMobile } from "../../components/lesson_nav_mobile";
 
 // style
 import { Container } from "./style";
@@ -100,10 +101,27 @@ export const PagLesson = ({ ...rest }) => {
             animate={animate}
           >
             <section className="lesson">
-              <motion.h1 variants={itemVariants}>
-                {currentLesson.name}
-              </motion.h1>
-              <Video height="360" width="640" url={currentLesson.video} />
+              <div className="video-container">
+                <motion.h1
+                  variants={itemVariants}
+                  className="video-container__title"
+                >
+                  {currentLesson.name}
+                </motion.h1>
+                <Video
+                  height="360"
+                  width="640"
+                  url={currentLesson.video}
+                  className="video--desktop-large"
+                />
+                <Video
+                  height="170"
+                  width="300"
+                  url={currentLesson.video}
+                  className="video--mobile"
+                />
+              </div>
+              <LessonNavMobile className="lesson__nav-mobile-buttons" />
               <motion.p className="lesson__intro" variants={itemVariants}>
                 {currentLesson.introduction}
               </motion.p>

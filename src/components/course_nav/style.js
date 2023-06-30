@@ -40,7 +40,7 @@ export const ItemContainer = styled.li`
       }
     }
   }
-  .number {
+  .number-box {
     background-color: ${theme.button[0].background};
     border-radius: 7px;
     height: 2.5rem;
@@ -51,6 +51,9 @@ export const ItemContainer = styled.li`
     font-weight: bold;
     font-size: 1.2rem;
     margin-right: 1.5rem;
+  }
+  .play {
+    display: none;
   }
   .name {
     overflow: hidden;
