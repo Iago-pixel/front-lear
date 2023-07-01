@@ -18,7 +18,9 @@ export const addInDiscord = () => {
 const screenBreakpoints = {
     desktop: 1024,
     tablet: 768,
-    mobile: 376
+    mobile: 376,
+    mobileG: 425
+
 }
 
 //create media queries

@@ -12,6 +12,7 @@ const moveDown = keyframes`
 
 export const mediaQueries = (container, maintext, login) =>{
     const mediaContainer = styled.div`
+        
        ${container}{
             ${media.desktop`
                     h1{
@@ -24,6 +25,20 @@ export const mediaQueries = (container, maintext, login) =>{
                         font-size: 1rem;
                        
                     }
+
+                    main{
+                        padding:  0 2rem;
+
+                        section:nth-child(1){
+                            flex: 1.5 1 0%
+                        }
+                    }
+
+                    input, button{
+                        height: 2.5rem;
+                    }
+
+
      
             `}
 
@@ -86,7 +101,7 @@ export const mediaQueries = (container, maintext, login) =>{
                     }
 
                     p{
-                        font-size: 0.7rem;
+                        font-size: 0.8rem;
                         text-align: center;
                     }
                 }
@@ -117,16 +132,12 @@ export const mediaQueries = (container, maintext, login) =>{
 
             `}
 
-            ${media.mobile`
+            ${media.mobileG`
                 .login-main-text{
                     width: 20rem;
 
                     h1{
                         font-size: 1rem;
-                    }
-
-                    p{
-                        font-size: 0.8rem;
                     }
                    
                 }
