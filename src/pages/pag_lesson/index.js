@@ -4,11 +4,16 @@ import { useState, useEffect } from "react";
 // router dom
 import { useNavigate, useParams, Link } from "react-router-dom";
 
+// react-redux
+import { useSelector, useDispatch } from "react-redux";
+import { updateIndex } from "../../store/modules/current_lesson/actions";
+
 // components
 import { Header } from "../../components/header";
 import { Button } from "../../components/button";
 import { Video } from "../../components/video";
 import { CourseNav } from "../../components/course_nav";
+import { LessonNavMobile } from "../../components/lesson_nav_mobile";
 
 // style
 import { Container } from "./style";
@@ -21,7 +26,13 @@ import { searchLessonId } from "../../service/util";
 // mocks
 import { classes } from "../../service/mocks";
 
+//responsibility
+import { mediaQueries } from "./media";
+const MediaContainer = mediaQueries(Container);
+
 export const PagLesson = ({ ...rest }) => {
+  const dispatch = useDispatch();
+  const index = useSelector((state) => state.currentLesson);
   const navigate = useNavigate();
   let { module_id, lesson_id } = useParams();
 
@@ -40,20 +51,30 @@ export const PagLesson = ({ ...rest }) => {
     setCurrentLesson(classes.filter((lesson) => lesson.id == lesson_id)[0]);
   }, [lesson_id]);
 
+  useEffect(() => {
+    setInitial("visible");
+    setAnimate("hidden");
+    const newLessonId = searchLessonId(module_id, index);
+    setTimeout(() => {
+      navigate(`/${module_id}/${newLessonId}`);
+      setInitial("hidden");
+      setAnimate("visible");
+    }, 500);
+  }, [index, module_id, navigate]);
+
   const back = () => {
     navigate("/dashboard");
   };
 
-  const backLesson = (index) => {
+  const backLesson = () => {
     if (index > 1) {
-      const lessonId = searchLessonId(module_id, index - 1);
-      navigate(`/${module_id}/${lessonId}`);
+      dispatch(updateIndex(index - 1));
     }
   };
 
-  const nextLesson = (index) => {
+  const nextLesson = () => {
     if (index < moduleLength) {
-      navigate(`/${module_id}/${index + 1}`);
+      dispatch(updateIndex(index + 1));
     }
   };
 
@@ -67,54 +88,72 @@ export const PagLesson = ({ ...rest }) => {
       transition={{ duration: 1 }}
       {...rest}
     >
-      <Container>
-        <Header hasPerfil>
-          <Button type={2} onClick={() => back()}>
-            Voltar
-          </Button>
-        </Header>
-        <motion.main
-          variants={containerVariants}
-          initial={initial}
-          animate={animate}
-        >
-          <section className="lesson">
-            <motion.h1 variants={itemVariants}>{currentLesson.name}</motion.h1>
-            <Video height="360" width="640" url={currentLesson.video} />
-            <motion.p className="lesson__intro" variants={itemVariants}>
-              {currentLesson.introduction}
-            </motion.p>
-            <Link
-              to={`/${module_id}/${lesson_id}/conteudo`}
-              className="lesson__material-link"
-            >
-              <motion.span variants={itemVariants}>
-                Material de suporte
-              </motion.span>
-            </Link>
-            <div className="lesson__move">
-              <Button
-                onClick={() => backLesson(currentLesson.index)}
-                disabled={currentLesson.index === 1}
+      <MediaContainer>
+        <Container>
+          <Header hasPerfil>
+            <Button type={2} onClick={() => back()}>
+              Voltar
+            </Button>
+          </Header>
+          <motion.main
+            variants={containerVariants}
+            initial={initial}
+            animate={animate}
+          >
+            <section className="lesson">
+              <div className="video-container">
+                <motion.h1
+                  variants={itemVariants}
+                  className="video-container__title"
+                >
+                  {currentLesson.name}
+                </motion.h1>
+                <Video
+                  height="360"
+                  width="640"
+                  url={currentLesson.video}
+                  className="video--desktop-large"
+                />
+                <Video
+                  height="170"
+                  width="300"
+                  url={currentLesson.video}
+                  className="video--mobile"
+                />
+              </div>
+              <LessonNavMobile className="lesson__nav-mobile-buttons" />
+              <motion.p className="lesson__intro" variants={itemVariants}>
+                {currentLesson.introduction}
+              </motion.p>
+              <Link
+                to={`/${module_id}/${lesson_id}/conteudo`}
+                className="lesson__material-link"
               >
-                Anterior
-              </Button>
-              <Button
-                onClick={() => nextLesson(currentLesson.index)}
-                disabled={currentLesson.index === moduleLength}
-              >
-                Próxima
-              </Button>
-            </div>
-          </section>
-          <CourseNav
-            classes={classes}
-            className="pag-lesson__course-nav"
-            setInitial={setInitial}
-            setAnimate={setAnimate}
-          />
-        </motion.main>
-      </Container>
+                <motion.span variants={itemVariants}>
+                  Material de suporte
+                </motion.span>
+              </Link>
+              <div className="lesson__move">
+                <Button onClick={() => backLesson()} disabled={index === 1}>
+                  Anterior
+                </Button>
+                <Button
+                  onClick={() => nextLesson()}
+                  disabled={index === moduleLength}
+                >
+                  Próxima
+                </Button>
+              </div>
+            </section>
+            <CourseNav
+              classes={classes}
+              className="pag-lesson__course-nav"
+              setInitial={setInitial}
+              setAnimate={setAnimate}
+            />
+          </motion.main>
+        </Container>
+      </MediaContainer>
     </motion.div>
   );
 };

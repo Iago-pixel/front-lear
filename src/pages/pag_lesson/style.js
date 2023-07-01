@@ -10,18 +10,27 @@ export const Container = styled.div`
     display: flex;
     justify-content: space-between;
   }
+  .lesson {
+    width: 640px;
+  }
   h1 {
     font-size: ${theme.title.fontSize};
     color: ${theme.main.colorFont};
     margin: 0 0 1rem;
+  }
+  .lesson__nav-mobile-buttons {
+    display: none;
+    button {
+      border-radius: 0;
+    }
   }
   .lesson__intro {
     color: ${theme.main.colorFont};
     max-width: 640px;
     word-break: break-word;
   }
-  .lesson {
-    width: 640px;
+  .video--mobile {
+    display: none;
   }
   .lesson__material-link {
     color: ${theme.link.colorFont};
@@ -36,6 +45,6 @@ export const Container = styled.div`
     margin: 1rem 0 3rem;
   }
   .pag-lesson__course-nav {
-    margin: 3rem 0;
+    margin: 3rem 0 0;
   }
 `;

@@ -50,6 +50,18 @@ export const theme = {
       sizeHeight: ["auto", "3rem"],
       arrowSize: "2rem",
     },
+    {
+      background: "#D9D9D9",
+      colorFont: "#000000",
+      sizeWidth: ["auto"],
+      sizeHeight: ["auto"],
+    },
+    {
+      background: "#676767",
+      colorFont: "#000000",
+      sizeWidth: ["auto"],
+      sizeHeight: ["auto"],
+    },
   ],
   buttonDisabled: {
     background: "#74E4E5",
@@ -100,11 +112,15 @@ export const itemVariants = {
 };
 
 export const GlobalStyle = createGlobalStyle`
+  html {
+    scroll-behavior: smooth;
+  }
   body {
       padding: 0;
       margin: 0 auto;
       max-width: 1440px;
       background-color: ${theme.main.background};
+      position: relative;
   }
 
   figure {

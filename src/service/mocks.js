@@ -183,6 +183,14 @@ export const classes = [
     introduction: "Avaliação para testar como estão indo...",
     module_id: "1",
   },
+  {
+    id: "10",
+    index: 10,
+    name: "Dicas",
+    video: "https://youtu.be/3HNlepEfPqc",
+    introduction: "Algumas dicas para os estudos de programação...",
+    module_id: "1",
+  },
 ];
 
 export const lessonArticles = [
@@ -1348,5 +1356,89 @@ export const lessonArticles = [
       );
     },
     lesson_id: "9",
+  },
+  {
+    id: "31",
+    title: "Dicas",
+    Content: () => {
+      return (
+        <>
+          <h2>Cansaço Mental</h2>
+          <p>
+            O <span className="bold">cansaço mental</span> não é tão perceptível
+            quando o físico. Confundimos o cansaço psicológico com{" "}
+            <span className="bold">preguiça e procrastinação</span>, porém,
+            diferente destes, o cansaço mental reduz nossa capacidade de
+            raciocínio. Passar muito tempo estudando ou sob estresse pode deixar
+            sua mente esgotada e fazer com que você trave em um problema.
+            Perceber que precisa descansar faz parte do{" "}
+            <span className="bold">autoconhecimento</span>. Nessas horas podemos
+            tomar um banho, fazer uma caminhada, se deitar, brincar com o pet e
+            etc... Ao retornar... “puff”, a solução do problema vem à cabeça!
+          </p>
+          <h2>Paciência</h2>
+          <p>
+            Não adianta achar que todos os problemas vão ser resolvido em
+            minutos ou em horas... as vezes problemas ocupam nossa mente por
+            dias! Programadores estão lá para resolver problemas, incluindo
+            problemas que talvez ninguém nunca tenha pensado sobre e sejam muito
+            cabeludos. Então <span className="bold">seja persistente</span>. Eu
+            gosto de pensar que quando mais desafiador o problema mais prazeroso
+            será superá-lo.
+          </p>
+          <h2>Não é uma competição</h2>
+          <p>
+            Lembre-se que não é uma competição,{" "}
+            <span className="bold">é um processo de aprendizado</span>. Então
+            não importa se alguém resolveu antes de você.
+          </p>
+          <h2>Não confie demais na sua intuição</h2>
+          <p>
+            Não confie demais que sabe exatamente aonde erro. Podemos passar
+            horas prezo analisando um mesmo ponto da lógica, com a certeza de
+            que o erro está lá. Se estiver preso, procure o erro que cometeu em
+            cada paço do processo, ou melhor, recomece do zero!
+          </p>
+          <h2>Existe mais de uma solução</h2>
+          <p>
+            Não existe apenas uma resolução para um problema. Ok... alguns
+            problemas podem ter apenas uma resolução apenas... mas quando
+            falamos de programação não é o caso! Se você viu uma forma de
+            resolver um problema não precisa se limitar a ela.
+          </p>
+          <h2>Artigo interessante com mais dicas:</h2>
+          <p>
+            <a
+              href="https://novosalunos.com.br/raciocinio-logico/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              4 dicas para melhorar seu raciocínio lógico de forma divertida
+            </a>
+          </p>
+        </>
+      );
+    },
+    lesson_id: "10",
+  },
+  {
+    id: "32",
+    title: "Atividade",
+    Content: () => {
+      return (
+        <>
+          <p>
+            <a
+              href="https://poki.com.br/g/dark-light-swap"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Dark Light Swap
+            </a>
+          </p>
+        </>
+      );
+    },
+    lesson_id: "10",
   },
 ];

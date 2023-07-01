@@ -44,22 +44,27 @@ export const customStyles = {
     backgroundColor: "rgba(0,0,0,0)",
   },
   content: {
-    top: "4rem",
+    top: "2rem",
     left: "auto",
     right: "2.4rem",
     bottom: "auto",
     width: "10rem",
     borderRadius: theme.main.borderRadius,
-    backgroundColor: theme.menu.background,
+    backgroundColor: theme.main.background,
     border: "none",
     padding: 0,
   },
 };
 
 export const NavContainer = styled.nav`
+  background-color: ${theme.menu.background};
+  border-radius: ${theme.main.borderRadius};
+  width: 100%;
+  height: 100%;
   ul {
     list-style-type: none;
     padding: 1rem 0 0.5rem;
+    margin: 0;
   }
   li {
     padding: 0 1rem;
