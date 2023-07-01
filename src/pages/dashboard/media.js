@@ -61,7 +61,9 @@ export const mediaQueries = (container) => {
                   margin: 45px 0;
                   text-align: center;
               }
-
+              .svg-inline--fa{
+                height: 0.7em;
+              }
               .module-nav__top{
                       height: 2rem;
                      
