@@ -16,6 +16,9 @@ import logo from "../../imgs/logo.svg";
 // mocks
 import { courses, modules, classes } from "../../service/mocks";
 
+import { mediaQueries } from "./media";
+const MediaContainer = mediaQueries(Container)
+
 export const Dashboard = ({ ...rest }) => {
   return (
     <motion.div
@@ -24,12 +27,14 @@ export const Dashboard = ({ ...rest }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
       {...rest}
-    >
+    > 
+    <MediaContainer>
       <Header hasPerfil>
         <Link to="/area_do_usuario">
           <img src={logo} alt="" />
         </Link>
       </Header>
+      
       <Container>
         <h1>Trilha de ensino | {courses[0]["name"]}</h1>
         <motion.ul
@@ -51,6 +56,7 @@ export const Dashboard = ({ ...rest }) => {
           })}
         </motion.ul>
       </Container>
+      </MediaContainer>
     </motion.div>
   );
 };
