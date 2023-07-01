@@ -1,5 +1,5 @@
 import { classes } from "./mocks";
-import {css} from "styled-components";
+import { css } from "styled-components";
 
 export const searchLessonId = (module_id, index) => {
   const lesson = classes.filter(
@@ -16,19 +16,19 @@ export const addInDiscord = () => {
 
 //media screens for responsibility
 const screenBreakpoints = {
-    desktop: 1024,
-    tablet: 768,
-    mobile: 376
-}
+  desktop: 1024,
+  tablet: 768,
+  verticalTablet: 700,
+  mobile: 376,
+  mobileG: 425,
+};
 
 //create media queries
-export const media = Object
-.keys(screenBreakpoints)
-.reduce((acc, label)=>{
-    acc[label] = (...args) => css`
-        @media (max-width: ${screenBreakpoints[label]}px){
-            ${css(...args)}
-        }
-    `
-    return acc
-}, {})
+export const media = Object.keys(screenBreakpoints).reduce((acc, label) => {
+  acc[label] = (...args) => css`
+    @media (max-width: ${screenBreakpoints[label]}px) {
+      ${css(...args)}
+    }
+  `;
+  return acc;
+}, {});

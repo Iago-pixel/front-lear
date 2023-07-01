@@ -2,11 +2,14 @@ import styled from "styled-components";
 import { theme } from "../../styles/global";
 
 export const Container = styled.div`
+  padding: 0 2.5vw;
+  max-width: 1250px;
+  margin: 0 auto;
   header {
-    padding: 0 2rem 0 4rem;
+    padding: 0;
   }
   main {
-    padding: 0 4rem;
+    padding: 0;
     display: flex;
     justify-content: space-between;
   }
@@ -29,9 +32,6 @@ export const Container = styled.div`
     max-width: 640px;
     word-break: break-word;
   }
-  .video--mobile {
-    display: none;
-  }
   .lesson__material-link {
     color: ${theme.link.colorFont};
     &:hover {
@@ -45,6 +45,6 @@ export const Container = styled.div`
     margin: 1rem 0 3rem;
   }
   .pag-lesson__course-nav {
-    margin: 3rem 0 0;
+    margin: 3rem 0 0 0.5rem;
   }
 `;

@@ -4,7 +4,8 @@ import { theme } from "../../styles/global";
 
 export const Container = styled.section`
   background-color: transparent;
-  width: 26rem;
+  max-width: 26rem;
+  width: 30vw;
   max-height: 500px;
   overflow-y: scroll;
   overflow-x: hidden;
@@ -45,6 +46,7 @@ export const ItemContainer = styled.li`
     border-radius: 7px;
     height: 2.5rem;
     width: 2.5rem;
+    min-width: 2.5rem;
     display: flex;
     justify-content: center;
     align-items: center;

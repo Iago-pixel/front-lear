@@ -5,25 +5,18 @@ export const mediaQueries = (container, itemContainer) => {
   const mediaContainer = styled.div`
     ${container} {
       ${media.desktop`
-                        
-                `}
-
-      ${media.tablet`
-                
-
-                `}
-
-        ${media.mobile`
-            overflow-y: visible;
-            width: 95vw;
-            margin: 1rem 0 0;
-            max-height: unset;
+            width: calc(100vw - (560px + 3rem));
+            h1 {
+                display: none;
+            }
             ${itemContainer} {
                 margin: 1rem 0;
                 .number-box {
                     width: 1.5rem;
+                    min-width: 1.5rem;
                     height: 1.5rem;
                     border-radius: 50%;
+                    margin-right: .5rem;
                 }
                 .number {
                     display: none;
@@ -34,6 +27,21 @@ export const mediaQueries = (container, itemContainer) => {
                 }
                 .name {
                     font-size: 0.8rem;
+                }
+            }
+        `}
+
+      ${media.verticalTablet`
+            max-height: unset;
+            max-width: unset;
+            overflow-y: visible;
+            width: 95vw;
+            h1 {
+                display: block;
+            }
+            ${itemContainer} {
+                .number-box {
+                    min-width: unset;
                 }
             }
         `}
