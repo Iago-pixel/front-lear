@@ -34,7 +34,6 @@ export const mediaQueries = (container) => {
       ${media.verticalTablet`
             main {
                 flex-direction: column;
-                flex-wrap: wrap;
             }
             .lesson {
                 width: 100%;

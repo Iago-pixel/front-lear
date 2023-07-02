@@ -19,6 +19,8 @@ import { LessonNavMobile } from "../../components/lesson_nav_mobile";
 import { Container } from "./style";
 import { motion } from "framer-motion";
 import { containerVariants, itemVariants } from "../../styles/global";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faDownload, faStar } from "@fortawesome/free-solid-svg-icons";
 
 // utils
 import { searchLessonId } from "../../service/util";
@@ -102,12 +104,29 @@ export const PagLesson = ({ ...rest }) => {
           >
             <section className="lesson">
               <div className="video-container">
-                <motion.h1
-                  variants={itemVariants}
-                  className="video-container__title"
-                >
-                  {currentLesson.name}
-                </motion.h1>
+                <div className="video-container__header">
+                  <motion.h1
+                    variants={itemVariants}
+                    className="video-container__title"
+                  >
+                    {currentLesson.name}
+                  </motion.h1>
+                  <div className="lesson__download-button-stars-box">
+                    <FontAwesomeIcon
+                      icon={faDownload}
+                      style={{ color: "#676767", fontSize: "1.5rem" }}
+                    />
+                    <FontAwesomeIcon
+                      icon={faStar}
+                      style={{
+                        color: "yellow",
+                        fontSize: "1.5rem",
+                        display: "none",
+                      }}
+                    />
+                    <span className="lesson__grade">4.9/5</span>
+                  </div>
+                </div>
                 <Video url={currentLesson.video} className="video" />
               </div>
               <LessonNavMobile className="lesson__nav-mobile-buttons" />

@@ -16,10 +16,24 @@ export const Container = styled.div`
   .lesson {
     width: 640px;
   }
+  .video-container__header {
+    display: flex;
+    justify-content: space-between;
+  }
   h1 {
     font-size: ${theme.title.fontSize};
     color: ${theme.main.colorFont};
-    margin: 0 0 1rem;
+    margin: 0.5rem 0 0.5rem;
+  }
+  .lesson__download-button-stars-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 6rem;
+  }
+  .lesson__grade {
+    color: ${theme.main.colorFont};
+    display: none;
   }
   .lesson__nav-mobile-buttons {
     display: none;
