@@ -3,7 +3,14 @@ import { theme } from "../../styles/global";
 
 export const Container = styled.div`
   header {
-    padding-left: 4rem;
+    padding: 0 4rem;
+  }
+  .lesson__nav-mobile-buttons {
+    display: none;
+    width: 90vw;
+    button {
+      border-radius: 0;
+    }
   }
   main {
     padding: 0 4rem;
