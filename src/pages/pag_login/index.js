@@ -145,7 +145,7 @@ export const PagLogin = ({ ...rest }) => {
                   className="input"
                   type="password"
                 />
-                <Link to="/esqueceusenha">
+                <Link to="/recuperar_senha">
                   <motion.span variants={itemVariants}>
                     Esqueceu sua senha?
                   </motion.span>
