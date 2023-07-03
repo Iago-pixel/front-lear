@@ -3,27 +3,34 @@ import { useState, useEffect } from "react";
 
 // style
 import { Container } from "./style";
-import { itemVariants } from "../../styles/global";
 import { motion } from "framer-motion";
+import { itemVariants } from "../../styles/global";
 
 // components
 import YouTube from "react-youtube";
 
-export const Video = ({ height, width, url, ...rest }) => {
+// responsibility
+import { mediaQueries } from "./media";
+const MediaContainer = mediaQueries(Container);
+
+export const Video = ({ url, ...rest }) => {
+  const takeVideoId = (url) => {
+    return url.split("/").reverse()[0];
+  };
+
+  const [videoId, setVideoId] = useState(takeVideoId(url));
+
   useEffect(() => {
     setVideoId(takeVideoId(url));
   }, [url]);
 
-  const takeVideoId = (url) => {
-    return url.split("/").reverse()[0];
-  };
-  const [videoId, setVideoId] = useState(takeVideoId(url));
-
   return (
-    <Container className="box-video" height={height} width={width} {...rest}>
-      <motion.div variants={itemVariants}>
-        <YouTube videoId={videoId} />
-      </motion.div>
-    </Container>
+    <motion.div variants={itemVariants}>
+      <MediaContainer>
+        <Container {...rest}>
+          <YouTube videoId={videoId} />
+        </Container>
+      </MediaContainer>
+    </motion.div>
   );
 };

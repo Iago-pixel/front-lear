@@ -10,6 +10,10 @@ import { Button } from "../button";
 // style
 import { Container } from "./style";
 
+// responsibility
+import { mediaQueries } from "./media";
+const MediaContainer = mediaQueries(Container);
+
 export const LessonNavMobile = ({ ...rest }) => {
   const navigate = useNavigate();
   const location = useLocation();
@@ -28,22 +32,24 @@ export const LessonNavMobile = ({ ...rest }) => {
   }, [location.pathname]);
 
   return (
-    <Container {...rest}>
-      <Button
-        type={selectedButton === "video" ? 4 : 3}
-        onClick={() => navigate(`/${module_id}/${lesson_id}`)}
-      >
-        Vídeo
-      </Button>
-      <Button
-        type={selectedButton === "conteudo" ? 4 : 3}
-        onClick={() => navigate(`/${module_id}/${lesson_id}/conteudo`)}
-      >
-        Leitura
-      </Button>
-      <Button type={3} disabled>
-        Comentários
-      </Button>
-    </Container>
+    <MediaContainer>
+      <Container {...rest}>
+        <Button
+          type={selectedButton === "video" ? 4 : 3}
+          onClick={() => navigate(`/${module_id}/${lesson_id}`)}
+        >
+          Vídeo
+        </Button>
+        <Button
+          type={selectedButton === "conteudo" ? 4 : 3}
+          onClick={() => navigate(`/${module_id}/${lesson_id}/conteudo`)}
+        >
+          Leitura
+        </Button>
+        <Button type={3} disabled>
+          Comentários
+        </Button>
+      </Container>
+    </MediaContainer>
   );
 };

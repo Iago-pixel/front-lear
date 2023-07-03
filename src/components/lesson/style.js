@@ -13,6 +13,5 @@ export const Container = styled.article`
   }
   p {
     font-size: 1rem;
-    max-width: 1000px;
   }
 `;
