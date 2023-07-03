@@ -14,6 +14,10 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
+//responsibility
+import {mediaQueries} from "./media"
+const MediaContainer = mediaQueries(Container,ProfileContent);
+
 export const PagSuport = ({ ...rest }) => {
   const formSchema = yup.object().shape({
     question: yup.string().required("Dúvida obrigatório"),
@@ -39,34 +43,35 @@ export const PagSuport = ({ ...rest }) => {
       exit={{ opacity: 0 }}
       transition={{ duration: 1 }}
       {...rest}
-    >
-      <Container>
-        <Header hasExit>
-          <BackButton />
-        </Header>
-        <main>
-          <h1 className="main__title">Fale com o professor</h1>
-          <ProfileContent>
-            <form onSubmit={handleSubmit(onSubmitFunction)}>
-              <TextInput
-                name="question"
-                register={register}
-                errors={errors}
-                placeholder="Qual sua dúvida?"
-                colorType={1}
-              />
-              <Textarea
-                name="description"
-                register={register}
-                errors={errors}
-                placeholder="Descreva sua necessidade..."
-                className="description-input"
-              ></Textarea>
-              <Button className="send-button">Enviar</Button>
-            </form>
-          </ProfileContent>
-        </main>
-      </Container>
+    ><MediaContainer>
+        <Container>
+          <Header hasExit>
+            <BackButton />
+          </Header>
+          <main>
+            <h1 className="main__title">Fale com o professor</h1>
+            <ProfileContent>
+              <form onSubmit={handleSubmit(onSubmitFunction)}>
+                <TextInput
+                  name="question"
+                  register={register}
+                  errors={errors}
+                  placeholder="Qual sua dúvida?"
+                  colorType={1}
+                />
+                <Textarea
+                  name="description"
+                  register={register}
+                  errors={errors}
+                  placeholder="Descreva sua necessidade..."
+                  className="description-input"
+                ></Textarea>
+                <Button className="send-button">Enviar</Button>
+              </form>
+            </ProfileContent>
+          </main>
+        </Container>
+      </MediaContainer>
     </motion.div>
   );
 };
